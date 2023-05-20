@@ -1,0 +1,40 @@
+  .volunteer{
+    background-image: url('../images/volbg.jpg');
+    height:30vh;
+    width:100%;
+    background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+  }
+  .appointment{
+    background-image: url('../images/pbg.jpg');
+    height:30vh;
+    width:100%;
+    background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+  }
+  .membership{
+    background-image: url('../images/mbg.jpg');
+    height:30vh;
+    width:100%;
+    background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+  }
+  .new-membership{
+    background-image: url('../images/bmbg.jpg');
+    height:30vh;
+    width:100%;
+    background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+  }
+  #pg{
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+  }
