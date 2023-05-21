@@ -9,25 +9,6 @@
     {{-- <img class="animation__shake" src="{{asset('admin/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60"> --}}
     <h3 class="animation__shake text-red">Red Cross</h3>
   </div>
-  <!-- Content Header (Page header) -->
-  <div class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Fund Donation Overview</h1>
-        </div><!-- /.col -->
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="{{url('admin/dashboard')}}">Home</a></li>
-            <li class="breadcrumb-item active"><a href="{{url('admin/membership')}}">Membership</a></li>
-            <li class="breadcrumb-item active"><a href="{{url('admin/membership')}}">Overview</a></li>
-
-          </ol>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </div>
-  <!-- /.content-header -->
 
  
   <div class="content">

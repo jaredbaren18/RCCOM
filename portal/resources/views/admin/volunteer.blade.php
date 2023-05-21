@@ -11,6 +11,21 @@
   <!-- Main content -->
   <section class="content mt-2">
     <div class="container-fluid">
+      <div class="mx-auto" style="width:550px ">
+        @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show text-center" role="alert" style="width:550px">
+          <strong>{{session('success')}}</strong> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        
+        @elseif(session('failed'))
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert" style="width:550px">
+          <strong>{{session('failed')}}</strong> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        
+        @endif
+      </div>
       <div class="row">
         <div class="col-md-12 ">
         <div class="card volunteer"></div>
@@ -59,7 +74,7 @@
                           <td>{{$activated->vol_id}}</td>
                           <td>{{$activated->vol_municipal}}</td>
                           <td>{{$activated->vol_fname}} {{$activated->vol_mname}} {{$activated->vol_lname}}</td>
-                          <td><a href="" class="btn btn-warning">View</a></td>
+                          <td><a href="{{url('admin/volunteer/profile',['vol_id'=>$activated->vol_id])}}" class="btn btn-warning">View</a></td>
                         </tr>
       
                     @endforeach
@@ -93,7 +108,7 @@
                         <td>{{$pending->vol_id}}</td>
                         <td>{{$pending->vol_municipal}}</td>
                         <td>{{$pending->vol_fname}} {{$pending->vol_mname}} {{$pending->vol_lname}}</td>
-                        <td><a href="" class="btn btn-warning">View</a></td>
+                          <td><a href="{{url('admin/volunteer/profile',['vol_id'=>$pending->vol_id])}}" class="btn btn-warning">View</a></td>
                       </tr>
     
                   @endforeach

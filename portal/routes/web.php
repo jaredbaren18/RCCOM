@@ -116,4 +116,8 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     Route::get('volunteer',[Admin_Volunteer_Controller::class,'Volunteer']);
     Route::view('volunteer/add','admin.volunteers.forms.volunteer_form');
     Route::post('volunteer/create',[Admin_Volunteer_Controller::class,'Create_Volunteer']);
+    Route::get('volunteer/profile/{vol_id}',[Admin_Volunteer_Controller::class,'Vol_Profile']);
+    Route::get('volunteer/edit/{vol_id}',[Admin_Volunteer_Controller::class,'Vol_Edit']);
+    Route::post('volunteer/update',[Admin_Volunteer_Controller::class,'Vol_Update']);
+    Route::get('volunteer/delete/{vol_id}',[Admin_Volunteer_Controller::class,'Vol_Delete']);
 });
