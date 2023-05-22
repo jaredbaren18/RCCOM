@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('table_employees', function (Blueprint $table) {
             $table->id('emp_id');
             $table->string('emp_id_no');
+            $table->string('emp_profile')->nullable();
             $table->string('emp_fname');
             $table->string('emp_mname');
             $table->string('emp_lname');

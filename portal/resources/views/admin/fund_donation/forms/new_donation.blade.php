@@ -2,35 +2,10 @@
   <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
   <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   @extends('admin.layout.layout')
-  @section('admin-fun-donations')
+  @section('admin-fun-donations-add')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <div class="preloader flex-column justify-content-center align-items-center">
-      {{-- <img class="animation__shake" src="{{asset('admin/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60"> --}}
-      <h3 class="animation__shake text-red">Red Cross</h3>
-    </div>
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <a href="{{url('admin/donation/fund')}}">Back</a>
-            <h1 class="m-0">Fund Donation Overview</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{url('admin/dashboard')}}">Home</a></li>
-              <li class="breadcrumb-item active"><a href="{{url('admin/membership')}}">Membership</a></li>
-              <li class="breadcrumb-item active"><a href="{{url('admin/membership')}}">Overview</a></li>
 
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-  
     <div class="content ">
       <div class="containter-fluid p-3">
         @if(session('success'))

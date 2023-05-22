@@ -131,7 +131,6 @@ class Admin_Volunteer_Controller extends Controller
             'vol_time_your_free'=>'required',
             'vol_long_intend_in_prc'=>'required',
             'vol_where_get_to_know_volunteering'=>'required',
-            'vol_reason_why_become_volunteer'=>'required',
         ];
         $message=[
             'vol_fname.required'=>'Required',
@@ -168,7 +167,7 @@ class Admin_Volunteer_Controller extends Controller
             'vol_time_your_free.required'=>'Required',
             'vol_long_intend_in_prc.required'=>'Required',
             'vol_where_get_to_know_volunteering.required'=>'Required',
-            'vol_reason_why_become_volunteer.required'=>'Required',
+
         ];
         $validator= Validator::make($request->all(),$rules,$message);
         if($validator->fails())
@@ -430,10 +429,10 @@ class Admin_Volunteer_Controller extends Controller
         {
             if(Storage::exists($path))
             {
-                return redirect()->back()->with('failed','Faile to register');
+                return redirect()->back()->with('failed','Failed to register');
             }
             else{
-                return redirect()->back()->with('failed','Faile to register');
+                return redirect()->back()->with('failed','Failed to register');
             }
         }
     }

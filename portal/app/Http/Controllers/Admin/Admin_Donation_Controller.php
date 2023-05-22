@@ -16,7 +16,11 @@ class Admin_Donation_Controller extends Controller
     //
     public function Overview()
     {
-        $data['All']=table_donations::all();
+        $data['HD']=DB::table('table_donations')->where('don_status','Validated')->max('don_amount');
+        $data['Donations']=DB::table('table_donations')->where('don_status','Validated')->sum('don_amount');
+        $data['Validated']=DB::table('table_donations')->where('don_status','Validated')->get();
+        $data['Pending']=DB::table('table_donations')->where('don_status','Pending')->get();
+        $data['Validated_Count']=DB::table('table_donations')->where('don_status','Validated')->count();
         return view('admin.donations',$data);
     }
     public function Donator_Info($don_id)
@@ -101,6 +105,7 @@ class Admin_Donation_Controller extends Controller
             $donation->don_method=$request->don_method;
             $donation->don_email=$request->don_email;
             $donation->don_notes=$request->don_notes;
+            $donation->don_status='Validated';
             $donation->don_proof=Storage::url($path);
             $success=$donation->save();
             if($success)

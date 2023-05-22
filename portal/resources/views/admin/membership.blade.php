@@ -7,12 +7,27 @@
 <div class="content-wrapper">
 
   <!-- Main content -->
-  <section class="content mt-2">
+  <section class="content mt-5 pt-3">
     <div class="container-fluid">
 
       <!-- Small boxes (Stat box) -->
+
       <div class="col-md-12">
         <div class="card membership">
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="card">
+              <div class="card-body">
+                  
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+
+          </div>
         </div>
       </div>
       <div class="card">

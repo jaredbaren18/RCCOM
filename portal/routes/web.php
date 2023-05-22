@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Admin_Appointment_Controller;
+use App\Http\Controllers\Admin\Admin_Blood_Controller;
 use App\Http\Controllers\Admin\Admin_Dashboard_Controller;
 use App\Http\Controllers\Admin\Admin_Donation_Controller;
 use App\Http\Controllers\Admin\Admin_Employees_Controller;
@@ -20,8 +21,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-
 
 Route::prefix('/auth')->namespace('App\Http\Controllers\Auth')->group(function(){
     Route::view('signin','auth/sign-in');
@@ -94,7 +93,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
 
 
-
+    Route::get('donation/blood',[Admin_Blood_Controller::class,'Blood']);
 
 
 
