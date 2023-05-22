@@ -38,3 +38,30 @@
       background-size: contain;
 
   }
+  #CF{
+    height: 30vh;
+    width: 100%;
+    background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+  }
+  #BD{
+    height: 30vh;
+    width: 100%;
+    background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+  }
+  #rclogo{
+    height: 60px;
+    width: 75px;
+    position:relative;
+    background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+  }
+  #admin-profile{
+    display: none;
+    height: 100px;
+    width: 100px;
+  }

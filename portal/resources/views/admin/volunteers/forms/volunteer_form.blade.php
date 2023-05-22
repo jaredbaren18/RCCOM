@@ -942,7 +942,7 @@
                    
                     <div class="col-md-12">
                       <label for="">We are glad that you have shown significant interest in helping Philippine Red Cross' causes. Kindly state your reason/s for wanting to volunteer with the Philippine Red Cross.</label>
-                      <textarea name="vol_reason_why_become_volunteer" id="" cols="10" rows="2" value="{{session('Volunteer')['vol_reason_why_become_volunteer']}}" class="form-control @error('vol_reason_why_become_volunteer') is-invalid @enderror" placeholder="ex.Monday"></textarea>
+                      <input type="text" name="vol_reason_why_become_volunteer"  value="{{session('Volunteer')['vol_reason_why_become_volunteer']}}" class="form-control @error('vol_reason_why_become_volunteer') is-invalid @enderror" placeholder="ex.Monday">
                       @error('vol_reason_why_become_volunteer')
                       <span class="text-danger">{{$message}}</span>
                       @enderror

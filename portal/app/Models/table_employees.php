@@ -11,6 +11,7 @@ class table_employees extends Model
     protected $fillable=
     [
        'emp_id_no',
+       'emp_profile',
        'emp_fname',
        'emp_mname',
        'emp_lname',

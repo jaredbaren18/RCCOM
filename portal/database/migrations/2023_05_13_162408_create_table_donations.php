@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('don_method');
             $table->double('don_amount');
             $table->string('don_proof');
+            $table->string('don_status');
             $table->string('don_email');
             $table->string('don_notes')->nullable();
             $table->timestamps();

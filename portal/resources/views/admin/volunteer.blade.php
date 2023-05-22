@@ -9,7 +9,7 @@
 
   
   <!-- Main content -->
-  <section class="content mt-2">
+  <section class="content mt-5 pt-3">
     <div class="container-fluid">
       <div class="mx-auto" style="width:550px ">
         @if(session('success'))
@@ -115,16 +115,16 @@
                 </tbody>
               </table>
             </div>
-            <div class="card-footer d-flex justify-content-end">
-              <div class="row">
-                <div class="col-md-12">
-                  <a href="{{url('admin/volunteer/add')}}" class=" btn btn-primary">Add Volunteer</a>
-                </div>
-              </div>
-            </div>
            </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-end fixed-bottom my-3">
+          <a href="{{url('admin/volunteer/add')}}" class=" btn btn-primary mx-2">Add Volunteer</a>
+          <button type="button" class="btn btn-success">Export</button>
+          <button type="button" class="btn btn-success mx-2">Print</button>
+        </div>
+       </div>
 
     </div><!-- /.container-fluid -->
 

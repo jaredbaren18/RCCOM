@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Exception;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Storage;
 
 class AuthUserController extends Controller
 {
@@ -156,7 +157,9 @@ class AuthUserController extends Controller
         {
             if($password=="1234567890")
             {
+                $path="/storage/employee_profile/id.png";
                 $data=[
+                    'emp_profile'=>Storage::url($path),
                     'emp_id_no'=>1234567890,
                     'emp_fname'=>'Jared Philipps',
                     'emp_mname'=>"Aceveda",

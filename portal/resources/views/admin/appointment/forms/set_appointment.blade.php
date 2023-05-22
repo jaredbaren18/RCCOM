@@ -8,7 +8,7 @@
  
   
   <!-- Main content -->
-  <section class="content mt-2">
+  <section class="content mt-5 pt-3">
     <div class="container-fluid">
       <div class="mx-auto" style="width:550px ">
         @if(session('success'))

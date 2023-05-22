@@ -5,13 +5,10 @@
 @section('admin-fund-donation')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-  <div class="preloader flex-column justify-content-center align-items-center">
-    {{-- <img class="animation__shake" src="{{asset('admin/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60"> --}}
-    <h3 class="animation__shake text-red">Red Cross</h3>
-  </div>
+
 
  
-  <div class="content">
+  <div class="content mt-5 pt-3">
     <div class="containter-fluid">
       @if(session('success'))
       <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -26,38 +23,111 @@
       </div>
       
       @endif
-      <div class="card p-3">
-        <div class="card-header">
-          <a href="{{url('admin/donation/fund/add')}}" class="btn btn-primary">Add Donations</a>
+
+      <div class="col-md-12">
+        <div class="card">
+          <img src="{{asset('admin/images/cbg.png')}}" id="CF" alt="">
+        </div>
+      </div>
+   <div class="row">
+    <div class="col-md-8">
+      <div class="card px-3 ml-2">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 text-center">
+                <div class="card bg-danger">
+                  Total Donations
+                  <h1>{{$Donations}}</h1>
+                </div>
+             
+            </div>
+            <div class="col-md-3 text-center">
+              <div class="card bg-primary">
+                Highest Donation
+                <h1>{{$HD}}</h1>
+              </div>
+            </div>
+            <div class="col-md-3 text-center">
+            
+            <div class="card bg-info text-white">
+              Donators Count
+            <h1>{{$Validated_Count}}</h1>
+            </div>
+            </div>
+          
+          </div>
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header text-center bg-primary text-white">
+          Pending Donations
         </div>
         <div class="card-body">
-          <table id="donation-table">
+          <table id="pending-donation-table">
             <thead>
             <tr>
               <th>No.</th>
-              <th>ID</th>
               <th>Full Name</th>
               <th>Municipal</th>
               <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-              @php
-              $c=1;
-              @endphp
-              @foreach($All as $all)
+              @foreach($Pending as $pending)
               <tr>
-                <td>{{$c++}}</td>
-                <td>{{$all->don_id}}</td>
-                <td>{{$all->don_fname}} {{$all->don_mname}} {{$all->don_lname}}</td>
-                <td>{{$all->don_municipal}}</td>
-                <td><a href="{{url('admin/donation/fund/profile',['don_id'=>$all->don_id])}}" class=" btn btn-warning">View</a></td>
+                <td>{{$pending->don_id}}</td>
+                <td>{{$pending->don_fname}} {{$pending->don_mname}} {{$pending->don_lname}}</td>
+                <td>{{$pending->don_municipal}}</td>
+                <td><a href="{{url('admin/donation/fund/profile',['don_id'=>$validated->don_id])}}" class=" btn btn-warning">View</a></td>
               </tr>
               @endforeach
             </tbody>
           </table>
         </div>
       </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header text-center text-white bg-success">
+          Validated Donations
+        </div>
+        <div class="card-body">
+          <table id="donation-table">
+            <thead>
+            <tr>
+              <th>No.</th>
+              <th>Full Name</th>
+              <th>Municipal</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+              @foreach($Validated as $validated)
+              <tr>
+                <td>{{$validated->don_id}}</td>
+                <td>{{$validated->don_fname}} {{$validated->don_mname}} {{$validated->don_lname}}</td>
+                <td>{{$validated->don_municipal}}</td>
+                <td><a href="{{url('admin/donation/fund/profile',['don_id'=>$validated->don_id])}}" class=" btn btn-warning">View</a></td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+       
+      </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12 d-flex justify-content-end fixed-bottom my-3">
+      <a href="{{url('admin/donation/fund/add')}}" class="btn btn-primary d-flex justify-content-center mx-2">Add Donations</a>
+      <button type="button" class="btn btn-success">Export</button>
+      <button type="button" class="btn btn-success mx-2">Print</button>
+      <button type="button" class="btn btn-success">More</button>
+    </div>
+   </div>
+   
+   
     </div>
   </div>
 

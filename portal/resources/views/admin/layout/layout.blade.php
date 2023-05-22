@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="{{asset('admin/plugins/summernote/summernote-bs4.min.css')}}">
   <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{{asset('admin/css/volunteer.css')}}">
+  <link rel="stylesheet" href="{{asset('admin/css/general.css')}}">
   
 
 </head>
@@ -61,16 +61,13 @@
 @yield('admin-appointment-profile')
 
 
-
 @yield('admin-volunteer')
 @yield('admin-volunteer-form')
-
-
-
 
 @yield('admin-membership-logs')
 
 @yield('admin-fund-donation')
+@yield('admin-fun-donations-add')
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -119,11 +116,24 @@
 <script>
 $('#membership-table').dataTable();
 $('#donation-table').dataTable();
+$('#pending-donation-table').dataTable();
 $('#appointment-table').dataTable();
 $('#appointment-table-meetings').dataTable();
 $('#volunteer-table').dataTable();
 $('#volunteer-table-activated').dataTable();
-
+$(document).ready(function () {
+  $('#admn-btn').click(function (e) { 
+    e.preventDefault();
+  $('#rctext').toggle();
+  });
+  $('#sidebar').hover(function () {
+      // over
+    $('#rctext').show();
+      
+    }
+  );
+  
+});
   </script>
 
 </body>
