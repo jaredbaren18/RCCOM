@@ -8,7 +8,6 @@ use App\Http\Controllers\Admin\Admin_Membership_Controller;
 use App\Http\Controllers\Admin\Admin_Membership_Log_Controller;
 use App\Http\Controllers\Admin\Admin_Volunteer_Controller;
 use App\Http\Controllers\Auth\AuthUserController;
-use App\Http\Controllers\trycontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,8 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[trycontroller::class,'display']);
-Route::post('tryload',[trycontroller::class,'Trysend']);
+
 
 Route::prefix('/auth')->namespace('App\Http\Controllers\Auth')->group(function(){
     Route::view('signin','auth/sign-in');
@@ -120,4 +118,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     Route::get('volunteer/edit/{vol_id}',[Admin_Volunteer_Controller::class,'Vol_Edit']);
     Route::post('volunteer/update',[Admin_Volunteer_Controller::class,'Vol_Update']);
     Route::get('volunteer/delete/{vol_id}',[Admin_Volunteer_Controller::class,'Vol_Delete']);
+
+
 });
+Route::view('/','user.home');

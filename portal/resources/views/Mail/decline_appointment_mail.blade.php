@@ -10,6 +10,6 @@
     <h1>Red Cross Calapan</h1>
     <p>Hello {{$mail['user_fname']}}, we apologize that your appointment has been decline for this kind of reason.</p>
     <p>{{$mail['reason_for_decline']}}</p>
-    <p>{{by staff $mail['emp_fname']}}</p>
+    <p>by staff{{ $mail['emp_fname']}}</p>
 </body>
 </html>
