@@ -122,7 +122,12 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
     Route::get('chat',[Admin_RTC_Controller::class,'RTC']);
 });
+
 Route::post('send-chat',[Admin_RTC_Controller::class,'Send_Chat']);
 Route::get('conversation',[Admin_RTC_Controller::class,'Conversations']);
 Route::get('messages',[Admin_RTC_Controller::class,'Messages']);
 Route::view('/','user.home');
+
+Route::view('/','user/home');
+Route::view('/home','user/userhome');
+

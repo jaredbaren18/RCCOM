@@ -8,7 +8,9 @@
     <link href="{{ url('css/app.css') }}" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-900">
+    @include('user.header')
     
 <div class="flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900 md:pt-5 lg:pt-96  ">
    
