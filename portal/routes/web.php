@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\Admin_Donation_Controller;
 use App\Http\Controllers\Admin\Admin_Employees_Controller;
 use App\Http\Controllers\Admin\Admin_Membership_Controller;
 use App\Http\Controllers\Admin\Admin_Membership_Log_Controller;
+use App\Http\Controllers\Admin\Admin_RTC_Controller;
 use App\Http\Controllers\Admin\Admin_Volunteer_Controller;
 use App\Http\Controllers\Auth\AuthUserController;
 use Illuminate\Support\Facades\Route;
@@ -23,8 +24,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/auth')->namespace('App\Http\Controllers\Auth')->group(function(){
-    Route::view('signin','auth/sign-in');
-    Route::view('signup','auth/sign-up');
+    Route::get('signin',[AuthUserController::class,'Login']);
+    Route::get('signup',[AuthUserController::class,'Sign_Up']);
+    Route::get('logout',[AuthUserController::class,'Logout']);
     Route::view('forgot-password','auth/forgot-password');
     Route::post('loggingin',[AuthUserController::class,'Signin']);
     Route::post('register',[AuthUserController::class,'Register']);
@@ -118,6 +120,9 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     Route::post('volunteer/update',[Admin_Volunteer_Controller::class,'Vol_Update']);
     Route::get('volunteer/delete/{vol_id}',[Admin_Volunteer_Controller::class,'Vol_Delete']);
 
-
+    Route::get('chat',[Admin_RTC_Controller::class,'RTC']);
 });
+Route::post('send-chat',[Admin_RTC_Controller::class,'Send_Chat']);
+Route::get('conversation',[Admin_RTC_Controller::class,'Conversations']);
+Route::get('messages',[Admin_RTC_Controller::class,'Messages']);
 Route::view('/','user.home');

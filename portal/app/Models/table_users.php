@@ -26,8 +26,5 @@ class table_users extends Model
         'token',
         'type',
     ];
-    // public function appointment()
-    // {
-    //     return $this->hasMany(table_appointments::class);
-    // }
+
 }

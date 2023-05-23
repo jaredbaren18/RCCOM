@@ -47,6 +47,12 @@
 
 
 
+
+@yield('admin-chat')
+@yield('admin-chat-profile')
+
+
+
 {{-- MEMBERSHIP  --}}
 @yield('admin-membership')
 @yield('admin-membership-activated')
