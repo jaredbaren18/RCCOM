@@ -9,12 +9,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    @include('user.header')
     
-<div class="flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900">
-    <a href="" class="flex items-center justify-center mb-8 text-2xl font-semibold lg:mb-10 dark:text-white">
-        <img src="" class="mr-4 h-11" alt="">
-        <span>Red Cross Calapan Chapter</span>  
-    </a>
+<div class="flex flex-col items-center justify-center bg-gray-600 px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900">
+  
     @if(session('success'))
     <span style="color:yellowgreen">{{session('success')}}</span>
     @elseif(session('failed'))
@@ -22,6 +20,10 @@
     @endif
     <!-- Card -->
     <div class="w-full max-w-xl p-6 space-y-8 sm:p-8 bg-white rounded-lg shadow dark:bg-gray-800">
+
+        <h1 class="text-2xl font-bold text-red-800 dark:text-red-500 text-center">
+            RED CROSS ORIENTAL MINDORO
+        </h1>
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
             Go sign in
         </h2>
@@ -53,9 +55,9 @@
                 </div>
                 <a href="{{url('auth/forgot-password')}}" class="ml-auto text-sm text-primary-700 hover:underline dark:text-primary-500">Lost Password?</a>
             </div>
-            <button type="submit" class="w-full px-5 py-3 text-base font-medium bg-blue-500 text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Login to your account</button>
+            <button type="submit" class="w-full px-5 py-3 text-base font-medium bg-blue-500 text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 hover:text-yellow-800">Login to your account</button>
             <div class="text-sm font-medium text-gray-500 dark:text-gray-400">
-                Not registered? <a href="{{url('auth/signup')}}" class="text-primary-700 hover:underline dark:text-primary-500">Create account</a>
+                Not registered? <a href="{{url('auth/signup')}}" class="text-primary-700 hover:underline dark:text-primary-500 hover:text-red-800">Create account</a>
             </div>
         </form>
     </div>

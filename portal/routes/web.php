@@ -120,4 +120,5 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
 
 });
-Route::view('/','user.home');
+Route::view('/','user/home');
+Route::view('/home','user/userhome');
