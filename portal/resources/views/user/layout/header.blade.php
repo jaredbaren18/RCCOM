@@ -1,42 +1,88 @@
-<header class="sticky top-0 bg-white border-b border-slate-200 z-30 " x-data="{ isOpen: false }">
 
-  <nav class="container mx-auto px-8 py-4 md:flex md:items-center md:justify-between">
-    <div class="flex items-center justify-between">
-  
-        <img class="h-10 md:h-12" src="user/adminlogo.png" alt=""/>
-    
-      <!-- Mobile menu button -->
-      <div @click="isOpen = !isOpen" class="flex md:hidden">
-        <button type="button" class="text-gray-800 hover:text-gray-400 focus:text-gray-400 focus:outline-none" aria-label="toggle menu">
-          <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
-            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
+    <header class="sticky top-0 bg-white border-b border-slate-200 z-30 " x-data="{ isOpen: false }">
 
-    <div :class="isOpen ? 'flex' : 'hidden'" class="mt-2 flex-col space-y-4 md:mt-0 md:flex md:flex-row md:items-center md:space-y-0 md:space-x-10">
-      <a class="transform font-bold text-gray-800 hover:text-red-700" href="#">Home</a>
-      <a class="transform font-bold text-gray-800 hover:text-red-700" href="#">Service</a>
-      <a class="transform font-bold text-gray-800 hover:text-red-700" href="#">Contact</a>
-      <a class="transform font-bold text-gray-800 hover:text-red-700" href="#">About</a>
-      @if(!session('User'))
-      <a class="rounded-2xl font-bold border bg-gradient-to-b from-yellow-300 to-yellow-500 px-4 py-2 text-center text-white hover:shadow-xl" href="#">Sign Up</a>
-      @else
-      <ul class="navbar-nav ml-auto">
+      <nav class="container mx-auto px-8 py-4 md:flex md:items-center md:justify-between">
+        <div class="flex items-center justify-between">
+      
+            <img href="/" class="h-10 md:h-12" src="{{asset('user/adminlogo.png')}}" alt=""/>
+        
+          <!-- Mobile menu button -->
+          <div @click="isOpen = !isOpen" class="flex md:hidden">
+            <button type="button" class="text-gray-800 hover:text-gray-400 focus:text-gray-400 focus:outline-none" aria-label="toggle menu">
+              <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+                <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="fas fa-user-circle"></i>
+        <div :class="isOpen ? 'flex' : 'hidden'" class="mt-2 flex-col space-y-4 md:mt-0 md:flex md:flex-row md:items-center md:space-y-0 md:space-x-10">
+          <a class="transform font-bold text-gray-800 hover:text-red-700" href="/">Home</a>
+          <a x-data="{ open: true }" class="transform  font-bold text-gray-800 hover:text-red-700 md:hidden" href="/#services">Services</a>
+   
+
+
+    <!-- Dropdown menu for desktop view -->
+    <div x-data="{ open: false }" @mouseleave="open = false" class="relative hidden md:block">
+        <!-- Dropdown toggle button -->
+        <a
+          @mouseover="open = true" 
+          class="transform font-bold text-gray-800 hover:text-red-700" href="/#services"
+        >
+          Services
+        </a>
+
+        <!-- Dropdown menu -->
+        <div
+          x-show="open"
+          class="absolute  w-48 py-2 bg-gray-100 rounded-md shadow-xl
+          ">
+        
+          <a
+            href="#"
+            class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white"
+          >
+            Blood Program
           </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-envelope mr-2"></i>Logout
-            </a>
-        </li>
-      </ul>
-      @endif
-    </div>
-  </nav>
-</header>
+          <a
+            href="#"
+            class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white"
+          >
+            Volunteer
+          </a>
+          <a
+            href="#"
+            class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white"
+          >
+           Trainings and Seminars
+          </a>
+          <a
+            href="#"
+            class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white"
+          >
+            Appointments
+          </a>
+        </div>
+      </div>
+
+
+          <a class="transform font-bold text-gray-800 hover:text-red-700" href="/#news">News</a>
+          <a class="transform font-bold text-gray-800 hover:text-red-700" href="/#contact">Contact</a>
+          <a class="transform font-bold text-gray-800 hover:text-red-700" href="/#about">About</a>
+
+
+          @if(!session('User'))
+          <a class="rounded-2xl font-bold border bg-gradient-to-b from-yellow-300 to-yellow-500 px-4 py-2 text-center text-white hover:shadow-xl" href="#">Sign Up</a>
+          @else
+          <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="/auth/signup">ACCOUNT</a>
+          @endif
+          <a href="{{url('auth/logout')}}">Logout</a>
+  
+        </div>
+      </nav>
+    </header>
+ 
+  </body>
+</html>
+
+

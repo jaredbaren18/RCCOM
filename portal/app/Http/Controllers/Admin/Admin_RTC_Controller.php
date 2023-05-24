@@ -14,27 +14,33 @@ class Admin_RTC_Controller extends Controller
     //
     public function RTC(Request $request)
     {
-        
-        return view('admin.rtc');
+        session()->forget('Chat');
+        $data['Messages']=DB::table('table_contacts')->orderBy('updated_at','desc')->get();
+        return view('admin.rtc',$data);
     }
-    // public function RTC_Profle(Request $request,$user_id)
-    // {
+    public function UserProfile($u_id)
+    {
 
-    //     $find=DB::table('table_rtc')->where('u_id',$user_id)->get();
-    //     return view('admin.rtc.pages');
-    // }
+    }
     public function Messages()
     {
         if(session('Admin'))
         {
-            $data=DB::table('table_contacts')->get();
+            $data=DB::table('table_contacts')->orderByDesc('uid')->orderBy('updated_at')->get();
             return response()->json($data);
         }
         elseif(session('Staff'))
         {
-            $data=DB::table('table_contacts')->get();
+            $data=DB::table('table_contacts')->orderByDesc('uid')->orderBy('updated_at')->get();
             return response()->json($data);
         }
+    }
+    public function Messenger($u_id)
+
+    {   
+        // $data['user']=DB::table('table_contacts')->where('u_id',$u_id)->first();
+        $data=DB::table('table_rtc')->where('u_id',$u_id)->orderBy('updated_at')->get();
+        return response()->json($data);
     }
     public function Conversations()
     {
@@ -80,6 +86,8 @@ class Admin_RTC_Controller extends Controller
                 $con->uid=session('User')['user_id'];
                 $con->con_fname=session('User')['user_fname'];
                 $con->con_lname=session('User')['user_lname'];
+                $con->message=$request->message;    
+                $con->status="Unseen";    
                 $success=$con->save();
                 if($success)
                 {
@@ -105,12 +113,13 @@ class Admin_RTC_Controller extends Controller
                 $sent=$new->save();
                     if($sent)
                     {
-                        return response()->json(['success'=>'Sent'],201);
+                        $updated=DB::table('table_contacts')->where('uid',session('User')['user_id'])->update(['status'=>'Unseen','message'=>$request->message]);
+                        if($updated)
+                        {
+                            return response()->json(['success'=>'Sent'],201);
+                        }
                     }
-                    else
-                    {
-                        return response()->json(['failed'=>'Check your network connection'],422);
-                    }
+
             }
             else
             {
@@ -124,6 +133,7 @@ class Admin_RTC_Controller extends Controller
                 $sent=$new->save();
                 if($sent)
                 {
+                    $updated=DB::table('table_contacts')->where('uid',session('User')['user_id'])->update(['status'=>'Unseen','message'=>$request->message]);
                     return response()->json(['success'=>'Sent'],201);
                 }
                 else
@@ -140,18 +150,20 @@ class Admin_RTC_Controller extends Controller
        {
         $new= new table_rtc();
         $new->message=$request->message;
-        $new->u_id=session('User')['user_id'];
-        $new->chat_fname=session('User')['user_fname'];
-        $new->chat_lname=session('User')['user_lname'];
-        $new->sendby="User";
-        $new->status="Unseen";
+        $new->u_id=session('Chat')['user_id'];
+        $new->chat_fname=session('Chat')['user_fname'];
+        $new->chat_lname=session('Chat')['user_lname'];
+        $new->sendby="Staff";
+        $new->status="Seen";
         $sent=$new->save();
         if($sent)
         {
+            $updated=DB::table('table_contacts')->where('uid',session('Chat')['user_id'])->update(['status'=>'Seen','message'=>$request->message]);
             return response()->json(['success'=>'Sent'],201);
         }
         else
         {
+          
             return response()->json(['failed'=>'Check your network connection'],422);
         }
 
@@ -166,7 +178,11 @@ class Admin_RTC_Controller extends Controller
         $sent=$new->save();
         if($sent)
         {
-            return response()->json(['success'=>'Sent'],201);
+            $updated=DB::table('table_contacts')->where('uid',$request->u_id)->update(['status'=>'Seen','message'=>$request->message]);
+            $data=DB::table('table_rtc')->where('u_id',$request->u_id)->orderBy('updated_at')->get();
+
+            
+            return response()->json(['success'=>'Sent','data'=>$data],201);
         }
         else
         {

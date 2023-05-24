@@ -14,6 +14,8 @@ class table_contacts extends Model
         'uid',
         'con_fname',
         'con_lname',
+        'message',
+        'status',
     ]
     ;
 }

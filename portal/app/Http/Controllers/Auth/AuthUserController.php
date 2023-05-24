@@ -82,7 +82,7 @@ class AuthUserController extends Controller
                         ];
                         session()->put('User',$data);
 
-                        return redirect('/');
+                        return redirect('/home');
                     }
                     else
                     {

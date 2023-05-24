@@ -16,6 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('uid');
             $table->string('con_fname');
             $table->string('con_lname');
+            $table->string('message');
+            $table->string('status');
             $table->timestamps();
         });
     }

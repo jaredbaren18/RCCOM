@@ -19,10 +19,10 @@
     <div class="card-footer bg-danger">
  <div class="row">
    <div class="col-md-10">
-    <form id="rtc-form" action="{{url('send-chat')}}" method="post">
+    <form class="input-group" id="rtc-form" action="{{url('send-chat')}}" method="post">
       @csrf
-    <input id="rtc-input" type="text" name="message" class="form-control">
-   </div>
+      <input id="rtc-input" type="text" name="message" class="form-control">
+    </div>
    <div class="col-md-2 text-center">
     <button type="submit" class="btn btn-warning  "><i class="fas fa-paper-plane"></i></button>
   </form>
@@ -41,7 +41,6 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   <script>
     $(document).ready(function () {
-      reloadChat();
       $('#chat-btn').click(function (e) { 
         e.preventDefault();
         $('#chat-form').addClass('block');
@@ -78,6 +77,12 @@
                 }
             });
         });
+
+     
+setInterval(() => {
+  reloadChat()
+}, 1000);
+
     });
     function reloadChat()
     {

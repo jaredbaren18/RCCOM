@@ -50,6 +50,7 @@
 
 
 @yield('admin-chat')
+@yield('admin-chat-convo')
 @yield('admin-chat-profile')
 
 
@@ -75,6 +76,7 @@
 
 @yield('admin-fund-donation')
 @yield('admin-fun-donations-add')
+{{-- @include('admin.layout.rtc') --}}
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -139,6 +141,16 @@ $(document).ready(function () {
       
     }
   );
+  // $.ajax({
+  //   type: "GET",
+  //   url: "/user-chat/",
+  //   data: "data",
+  //   dataType: "json",
+  //   success: function (response) {
+  //     console.log(response);
+      
+  //   }
+  // });
   
 });
   </script>
