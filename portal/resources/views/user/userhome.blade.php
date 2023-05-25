@@ -19,8 +19,8 @@
   </head>
 
   <body>
-    @include('user.userheader')
-
+    @extends('user.layout.layout')
+    @section('user-home')
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -260,11 +260,7 @@
       
             </div>
           </section>
-
-          @include('user.footer')
-          
-    
-          <!-- Swiper JS -->
+                              <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
       var swiper = new Swiper('.mySwiper', {
@@ -284,8 +280,10 @@
         },
       });
     </script>
-  </body>
-</html>
+          @endsection
+
+
+
 
 {{-- <section class="mt-4 py-16 bg-gray-500">
     <div class="mx-8 grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-5">

@@ -28,7 +28,7 @@
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
             Create a Free Account
         </h2>
-        <form action="{{url('auth/register')}}" method="post" class="mt-8 space-y-6" action="#" enctype="multipart/form-data">
+        <form action="{{url('auth/register')}}" method="post" class="mt-8 space-y-6" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="Firs Name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>

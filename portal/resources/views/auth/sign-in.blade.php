@@ -1,3 +1,7 @@
+
+@extends('user.layout.layout')
+@section('user-signin')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    @include('user.header')
+
     
 <div class="flex flex-col items-center justify-center bg-gray-600 px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900">
   
@@ -62,6 +66,4 @@
         </form>
     </div>
 </div>
-
-</body>
-</html>
+@endsection

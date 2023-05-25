@@ -19,6 +19,22 @@ use Illuminate\Support\Facades\Storage;
 class AuthUserController extends Controller
 {
     //
+    public function Login()
+    {
+        if(session('User'))
+        {
+            return redirect()->back();
+        }
+        return view('auth.sign-in');
+    }
+    public function Sign_Up()
+    {
+        if(session('User'))
+        {
+            return redirect()->back();
+        }
+           return view('auth.sign-up');
+    }
     public function Signin(Request $request)
     { 
         $rules=[
@@ -66,7 +82,7 @@ class AuthUserController extends Controller
                         ];
                         session()->put('User',$data);
 
-                        return response()->json(session('User'));
+                        return redirect('/home');
                     }
                     else
                     {
@@ -266,7 +282,7 @@ class AuthUserController extends Controller
             $path=$request->file('user_profile')->store('public/user_profile');
             
             $user= new table_users();
-            $user->user_profile=$path;
+            $user->user_profile=Storage::url($path);
             $user->user_fname=$user_fname;
             $user->user_mname=$user_mname;
             $user->user_lname=$user_lname;
@@ -530,28 +546,23 @@ class AuthUserController extends Controller
             return redirect('/forgot')->with('failed','Something went wrong. Make sure you have entered correct email.');
         }
     }
-    public function logout()
+    public function Logout()
     {
-        if(session()->has('User.type')=="User")
-        {
-            session()->flush();
-            return response()->json(['message' => 'User account have been logged out!']);
-    
-        }
-        else if(session()->has('Admin.type')=="Admin")
+        if(session('Admin'))
         {
             session()->forget('Admin');
-            return response()->json(['message' => 'Admin account have been logged out!']);
+            return redirect('auth/signin');
+    
         }
-        else if(!session()->has('Staff.type')=="Staff")
+        else if(session('Staff'))
         {
             session()->forget('Staff');
+            return redirect('auth/signin');
 
-            return response()->json(['message' => 'Staff account have been logged out!']);
         }
         else
-        {
-            return response()->json(['message' => 'Account have been logged out!']);
+        {   session()->forget('User');
+            return redirect('auth/signin');
         }
       
     }

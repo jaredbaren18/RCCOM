@@ -86,7 +86,15 @@
             </li>
   
           <li class="nav-header">Others</li>
-   
+          <li class="nav-item">
+            <a href="{{url('admin/chat')}}" id="chat" class="nav-link ">
+              <i class="nav-icon far fa-comment"></i>
+              <p>
+               Chat
+              </p>
+            </a>
+          </li>
+        
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>

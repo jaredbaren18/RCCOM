@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Mail\Membership_Activated_Mail;
 use App\Models\table_memberships;
 use App\Models\table_memberships_log;
-use App\Models\table_users_log;
-use App\Models\table_try_table;
 use DateTime;
 
 use Exception;
