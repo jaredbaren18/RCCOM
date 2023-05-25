@@ -18,9 +18,15 @@ class Admin_RTC_Controller extends Controller
         $data['Messages']=DB::table('table_contacts')->orderBy('updated_at','desc')->get();
         return view('admin.rtc',$data);
     }
-    public function UserProfile($u_id)
+    public function User_Chat_Messages()
     {
+        $data=DB::table('table_contacts')->orderBy('updated_at','desc')->get();
+        return response()->json($data);
 
+    }
+    public function User_Profile()
+    {
+        
     }
     public function Messages()
     {
@@ -126,8 +132,6 @@ class Admin_RTC_Controller extends Controller
                 $new= new table_rtc();
                 $new->message=$request->message;
                 $new->u_id=session('User')['user_id'];
-                $new->chat_fname=session('User')['user_fname'];
-                $new->chat_lname=session('User')['user_lname'];
                 $new->sendby="User";
                 $new->status="Unseen";
                 $sent=$new->save();
@@ -178,7 +182,8 @@ class Admin_RTC_Controller extends Controller
         $sent=$new->save();
         if($sent)
         {
-            $updated=DB::table('table_contacts')->where('uid',$request->u_id)->update(['status'=>'Seen','message'=>$request->message]);
+            DB::table('table_contacts')->where('uid',$request->u_id)->update(['status'=>'Seen','message'=>$request->message]);
+            DB::table('table_rtc')->select('status')->where('u_id',$request->u_id)->update(['status'=>'Seen']);
             $data=DB::table('table_rtc')->where('u_id',$request->u_id)->orderBy('updated_at')->get();
 
             

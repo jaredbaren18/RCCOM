@@ -38,8 +38,8 @@
               </table>
          <div id=table-messages class="col-md-12 ">
           @foreach ($Messages as $chats)
-          @if($chats->status=="UnSeen")
-          <div class="col-md-12 bg-warning p-3 rounded">
+          @if($chats->status=="Unseen")
+          <div class="col-md-12 p-3 rounded">
             <div class="d-flex">
               <td>
                 <h3><i class="fas fa-user-circle px-3"></i></h3>
@@ -66,22 +66,33 @@
           </div>
           </div>
           <div id="table-chat" class="col-md-12 d-none">
-            <div class="card">
-              <div class="card-header ">
+
+
+     
+            <div class="row mt-3">
+          <div class="card">
+            <div class="row ">
+              <div class="col-md-12 mt-2">
                 <button id="close-chat-btn" class="btn btn-light"><i class="fas fa-reply"></i></button>
-                <h3>  <i class="	far fa-comments text-center"></i></h3>
               </div>
-              <div class="card-body overflow-auto">
-                <table id="user-conversation">
-                  <tbody></tbody>
-                </table>
-                <form class="input-group" id="rtc-form" method="post">
-                  @csrf
-                  <input id="u_id" type="hidden" name="u_id" class="form-control">
-                  <input id="message" type="text" name="message" class="form-control">
-                  <button type="submit" class="btn btn-warning  "><i class="fas fa-paper-plane"></i></button>
-                </div>
-              </form>
+            </div>      
+            <div class="card p-3 mt-3">
+              <table id="user-conversation" >
+                <tbody class="px-5 overflow-scroll"></tbody>
+              </table>
+            </div>
+            <form class="input-group" id="rtc-form" method="post">
+              @csrf
+              <input id="u_id" type="hidden" name="u_id" class="form-control">
+              <input id="message" type="text" name="message" class="form-control">
+              <button type="submit" class="btn btn-warning  "><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+              
+             </div>
+
+
+
               </div>
             </div>
           </div>
@@ -147,10 +158,12 @@
             $('#table-chat').addClass('block');
             $('#table-messages').removeClass('block');
             $('#table-messages').addClass('d-none');
+            userChats();
           });
           setInterval(() => {
             userChats();
-          }, 30000);
+          }, 10000);
+          userChats();
       });
       function userChats()
       {
@@ -165,22 +178,32 @@
             $('#u_id').val("");
             $('#u_id').val(response[0].u_id);    
             $.each(response, function(index, data) {
-              var row = $('<tr>');   
-                      if(data.sendby=="Admin" || data.sendby=="Staff")
+                      var row = $('<tr>');   
+                       row.addClass('rounded');
+                       var td=$('<td>');
+                        td.addClass('px-3 py-2');
+                        var icon=$('#icon');
+                        icon.addClass('far fa-user-circle');
+                        if(data.sendby=="Admin" || data.sendby=="Staff")
                       {
-                        var td=($('<td>').text(data.message));  
-                          td.addClass('text-right');
+                        
+                          td.text(data.message);  
+                          td.addClass('text-right text-primary');
+
+
                       }  
                       else
                       {
-                        var td=($('<td>').text(data.message));  
+                        td.text(data.message);  
                           td.addClass('text-left');
+                          td.addClass('text-success');
                       }
-                      row.append(td));   
+                      row.append(td)
+                      ;   
                       convo.append(row);
-                }); 
+                    }); 
+                  }
            
-          }
         });
       }
 </script>

@@ -12,8 +12,6 @@ class table_rtc extends Model
     protected $fillable=[
         'u_id',
         'sendby',
-        'chat_fname',
-        'chat_mname',
         'message',
         'status',
     ];
