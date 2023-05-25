@@ -124,5 +124,6 @@ Route::view('/','user/home');
 Route::view('/home','user/userhome');
 
 Route::view('/profile','user/profile');
+Route::view('/membership','user.membership');
 
 
