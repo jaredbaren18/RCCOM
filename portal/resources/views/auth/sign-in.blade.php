@@ -1,6 +1,6 @@
 
-@extends('user.layout.layout')
-@section('user-signin')
+{{-- @extends('user.layout.layout')
+@section('user-signin') --}}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +14,7 @@
 </head>
 <body>
 
+    @include('user.header')
     
 <div class="flex flex-col items-center justify-center bg-gray-600 px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900">
   
@@ -66,4 +67,7 @@
         </form>
     </div>
 </div>
-@endsection
+
+@include('user.layout.footer')
+
+{{-- @endsection --}}

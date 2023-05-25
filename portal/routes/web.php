@@ -98,18 +98,8 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     Route::get('donation/blood',[Admin_Blood_Controller::class,'Blood']);
 
 
-
-
-
-
-
     // MEMBERSHIP LOGS 
     Route::get('membership/activity/logs',[Admin_Membership_Log_Controller::class,'Membership_Logs']);
-
-
-
-
-
 
     // VOLUNTEERS 
     Route::get('volunteer',[Admin_Volunteer_Controller::class,'Volunteer']);
@@ -133,4 +123,7 @@ Route::view('/','user.home');
 
 Route::view('/','user/home');
 Route::view('/home','user/userhome');
+
+Route::view('/profile','user/profile');
+
 

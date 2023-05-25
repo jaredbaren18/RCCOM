@@ -1,18 +1,15 @@
-<div id="chat-form" class="fixed-bottom d-flex justify-content-end d-none m-5 p-3">
-    <div class="card p-3" style="width:400px;height:500px">
-      <div class="row">
-        <div class="col-md-11">
-          <h5 class="text-primary"><strong>Customer Service Staff</strong></h5>
-        </div>
-        <div class="col-md-1 d-flex justify-content-end">
-         <button id="close-chat-btn"><h4><i class=" fas fa-angle-down"></i></h4></button>
-        </div>
+<div id="chat-form" class="fixed-bottom d-flex justify-content-end m-2 d-none">
+  <div class="">  
+    <div class="card" style="width:400px;height:500px">
+    <div class="card-header">
+    <div class="row">
+      <div class="col-md-11">
+        <h4><strong>Customer Service Staff</strong></h4>
       </div>
-    <div id="chatbox" class="row overflow-auto rounded border-solid border-2">
-      <div class="card  ">
-      <table id="coversation" >
-        <tbody class="px-4 overflow-auto"></tbody>
-      </table>
+      <div class="col-md-1 d-flex justify-content-end">
+       <button id="close-chat-btn"><h4><i class=" fas fa-angle-down"></i></h4></button>
+      </div>
+    </div>
     </div>
     </div>
     <div class="row px-2 py-2 mt-2">
@@ -120,3 +117,6 @@ setInterval(() => {
         });
     }
   </script>
+</body>
+</html>
+
