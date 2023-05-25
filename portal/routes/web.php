@@ -115,6 +115,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
 Route::post('send-chat',[Admin_RTC_Controller::class,'Send_Chat']);
 Route::get('conversation',[Admin_RTC_Controller::class,'Conversations']);
+Route::get('admin-chat-messages',[Admin_RTC_Controller::class,'User_Chat_Messages']);
 Route::get('user-chat',[Admin_RTC_Controller::class,'Messages']);
 Route::get('admin-chat',[Admin_RTC_Controller::class,'AdminMessages']);
 Route::get('chat/{u_id}',[Admin_RTC_Controller::class,'Messenger']);

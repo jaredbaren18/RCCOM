@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{{asset('admin/plugins/fontawesome-free/css/all.min.css')}}">
-  <link rel="stylesheet" href="{{asset('user/css/user.css')}}">
-  
-</head>
-<body>
-  
 <div id="chat-form" class="fixed-bottom d-flex justify-content-end m-2 d-none">
   <div class="">  
     <div class="card" style="width:400px;height:500px">
@@ -24,27 +11,18 @@
       </div>
     </div>
     </div>
-    <div class="card-body overflow-auto">
-      <table id="coversation">
-        <tbody></tbody>
-    </table>
     </div>
-    <div class="card-footer bg-danger">
- <div class="row">
-   <div class="col-md-10">
-    <form class="input-group" id="rtc-form" action="{{url('send-chat')}}" method="post">
-      @csrf
-      <input id="rtc-input" type="text" name="message" class="form-control">
-    </div>
-   <div class="col-md-2 text-center">
-    <button type="submit" class="btn btn-warning  "><i class="fas fa-paper-plane"></i></button>
-  </form>
-   </div>
+    <div class="row px-2 py-2 mt-2">
+      <div class="col-md-12">
+        <form class="input-group" id="rtc-form" action="{{url('send-chat')}}" method="post">
+          @csrf
+          <input id="rtc-input" type="text" name="message" class="form-control">
+          <button type="submit" class="btn btn-warning  "><i class="fas fa-paper-plane"></i></button>
+        </div>
 
- </div>
+    </form>
+</div>
     </div>
-    </div>
-  </div>
     
   </div>
   <div class="d-flex justify-content-end fixed-bottom m-2">
@@ -60,6 +38,7 @@
         $('#chat-form').removeClass('d-none');
         $('#chat-btn').addClass('d-none');
         $('#chat-btn').removeClass('block');
+        reloadChat();
       });
       $('#close-chat-btn').click(function (e) { 
         e.preventDefault();
@@ -90,11 +69,10 @@
                 }
             });
         });
-
-     
 setInterval(() => {
-  reloadChat()
-}, 1000);
+  reloadChat();
+}, 5000);
+
 
     });
     function reloadChat()
@@ -109,10 +87,27 @@ setInterval(() => {
                 var tableBody = $('#coversation tbody');
                 
                 $.each(response, function(index, data) {
-                    var row = $('<tr>');
-                    row.append($('<td>').text(data.message));
-                    tableBody.append("");
-                    tableBody.append(row);
+                  var tr = $('<tr>');
+                      var td=$('<td>');
+                        var p=$('<p>');
+                          var icon=$('<i>');
+             if(data.sendby=="Admin"||data.sendby=="Staff")
+             
+             {
+              td.text(" "+data.message);
+              td.addClass('text-left p-3');
+              tr.append(td);
+
+                   
+             }
+             else
+             {
+              td.text(data.message);
+              td.addClass('text-right');
+              tr.append(td);
+             }
+          
+             tableBody.append(tr);
                 });
             },
             error: function(xhr) {
