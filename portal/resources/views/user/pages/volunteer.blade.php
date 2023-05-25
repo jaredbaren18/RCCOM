@@ -17,258 +17,84 @@
     <div class="flex flex-col min-h-screen overflow-hidden">
       <img
       class="object-cover w-full h-50"
-      src="{{asset('admin/images/mbg.jpg')}}"
+      src="{{asset('admin/images/vbg.jpg')}}"
       alt="apple watch photo"
     />
         <main class="grow">
+     
     
-
-          <section class="bg-cover bg-no-repeat py-12" style="background-image: url('user/home.png')">
+  
+          <div class="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
+          </div>
+  
+        <section class="bg-cover bg-no-repeat py-12 " style="background-image: url('user/static/vol.jpg')">
+     
 
         <div class="w-full w-auto px-4 sm:px-6 pt-8 md:pt-8">
          
-            <div class="w-3/4 mx-auto  pb-12 justify-center md:pb-20 " data-aos="fade-up">
+          <div class="w-full mx-auto py-5 px-12  pb-12 justify-center md:pb-20 " data-aos="fade-up">
+            <h1 class="md:text-4xl  xl:text-6xl text-4xl font-bold mb-4 text-white" data-aos="fade-up">
+              BE ONE OF US,<span class="text-red-600"> BE A VOLUNTEER!</span>
+            </h1>
 
-              <h1 class="md:text-4xl  xl:text-6xl text-4xl font-bold mb-4 text-red-600" data-aos="fade-up">
-                RED CROSS <span class="text-gray-300 ">   ORIENTAL MINDORO CHAPTER</span>
-              </h1>
+            <p class="text-lg text-gray-200 ">
+            Volunteer Service Office handles programs aim at encouraging people to become an army of volunteers of the Philippine Red Cross 
+            by sharing their resources, time, and efforts to alleviate human suffering. 
+            It takes active charge of the administration, development, growth, and effective mobilization of volunteers in all aspects of PRC 
+            services within the chapter jurisdiction in particular and/or the whole country. <br /><br />
+        
+            While this office delivers its service through recruitment, engagement and retention of volunteers, 
+            it also gives recognition to the outstanding individuals who rendered significant contribution to the organization.
+         <br /><br />
+         The delivery of essential services of the PRC is powered by the committed service of volunteers who unselfishly devotes time, energy, and resources in serving humanity. 
+        <br /><br />
+        To become a member, fill up the form or just visit our Red Cross Office
+            </p>
+            <ul class='py-5'>
+               <li>
+                <a href="/signin" 
+                class="mt-4 rounded-xl bg-gradient-to-b from-yellow-300 to-yellow-500 px-8 py-2 text-xl text-slate-900 font-bold hover:shadow-2xl">
+                REGISTER NOW!</a>
+              </li>
+            </ul>
 
-              <div class="text-gray-400 text-xl">
+          
 
-              Joining the Philippine Red Cross Membership Program gives an
-          individual self-worth as you are extending help to the most vulnerable
-          Filipinos. <br /><br />
-          Philippine Red Cross Membership is a form of donation that has
-          accident assistance benefits intended for anyone between 5-85 years
-          old. As a member, an individual is entitled to accidental death,
-          disablement and dismemberment, hospitalization and burial
-          reimbursements. <br /><br />
-          Membership fund drive program gives you access to all services of
-          Philippine Red Cross in times of emergencies, sickness and disasters.
-          <br /><br />
-          To become a member, register now or just visit our nearest PRC Chapter
-          in your area.
-              </p>
-              <ul>
-                 <li class="mt-4">
-                  <a href="/signin" 
-                  class="rounded-xl bg-gradient-to-b from-yellow-300 to-yellow-500 px-8 py-2 text-xl text-slate-900 font-bold hover:shadow-2xl">JOIN NOW!</a>                </li>
-              </ul>
+
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
+            <div class="flex justify-end">
+              <div class="px-15 py-24 lg:w-3/4">
+                <div class="w-full">
+                  <h1 class="md:text-4xl text-right xl:text-6xl text-4xl font-bold mb-4 text-white" data-aos="fade-up">
+                    RED CROSS,<span class="text-red-600 "> 143 PROGRAM</span>
+                    </h1>
+                  <div class="text-white text-right ml-10 text-xl">
+                    Red Cross 143 is a community-based volunteering program of the Philippine Red Cross where one leader and a minimum of forty three (43) 
+                    members form part of an active corps of capable, caring, and committed individuals. RC 143 promotes a culture of self-help in the 
+                    communities by developing a formidable network of Red Cross volunteers who will predict potential risk, plan, prepare, and practice
+                     for effective community based disaster risk reduction. <br />
+                  
+                      <ul class="mt-8">
+                          <li class="text-right">
+                              <a href="/auth/signin" class="bg-transparent hover:bg-yellow-500 text-red-600 font-bold hover:text-white py-2 px-4 border-4 border-red-600 hover:border-transparent rounded">
+                                  REGISTER NOW!
+                                </a>
+                                
+                                  
+                          </li>
+                        </ul>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
+
+
+          </div>
       </section>
      
-      <section class="bg-gray-700 text-gray-200">
-        <div class="flex mb-4">
-            <div class="w-full bg-red-500 h-6"></div>
-        </div>
-
-        <div class="w-full w-auto px-4 sm:px-6">
-            <div class="py-12 md:py-15 border-t border-gray-500">
-
-            <h1 class="h1 text-gray-200 text-center  py-5">MEMBERSHIP CATEGORIES</h1>
-                {{-- {/* Items */} --}}
-                <div class=" text-gray-200 max-w-md mx-auto grid gap-2 md:grid-cols-3 lg:grid-cols-3 md:max-w-xl lg:max-w-full text-center px-10" data-aos-id-blocks>
-                    {{-- {/* 1nd item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                        <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                            <img  width="100" src="{{asset('user/categories/classic.png')}}" alt=""  />
-
-
-                        </div>
-                        <h3 class="h3 text-red-600">CLASSIC</h3>
-                        <p class='h5 text-red-500'> Ages 5-25 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 12,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 12,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 150.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                    {{-- {/* 2nd item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                      <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                        <img src="{{asset('user/categories/bronze.png')}}" alt="" width="200" />
-                    </div>
-
-                        <h3 class="h3 text-red-600">PREMIERE BRONZE</h3>
-                        <p class='h5 text-red-500'> Ages 5-65 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 35,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 35,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 150.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                    {{-- {/* 3rd item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                        <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                            <img src="{{asset('user/categories/silver.png')}}" alt=""  width="200" />
-                        </div>
-                        <h3 class="h3 text-red-600">PREMIERE SILVER</h3>
-                        <p class='h5 text-red-500'> Ages 5-65 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 100,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 100,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 10,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 200.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                    {{-- {/* 4th item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                        <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                          <img src="{{asset('user/categories/gold.png')}}" alt=""  width="200"  />
-                        </div>
-                        <h3 class="h3 text-red-600">PREMIERE GOLD</h3>
-                        <p class='h5 text-red-500'> Ages 5-65 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 200,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 200,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 10,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 200.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                    {{-- {/* 5th item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                        <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                          <img src="{{asset('user/categories/platinum.png')}}" alt=""  width="200"  />
-                        </div>
-                        <h3 class="h3 text-red-600">PREMIERE PLATINUM</h3>
-                        <p class='h5 text-red-500'> Ages 5-65 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 300,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 300,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 10,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 200.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                    {{-- {/* 6th item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                        <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                          <img src="{{asset('user/categories/senior.png')}}" alt=""   width="200"/>
-                        </div>
-                        <h3 class="h3 text-red-600">PREMIERE SENIOR</h3>
-                        <p class='h5 text-red-500'> Ages 66-80 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 50,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 50,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 100.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                    {{-- {/* 7th item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                        <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                          <img src="{{asset('user/categories/plus.png')}}" alt=""   width="200"/>
-                        </div>
-                        <h3 class="h3 text-red-600">PREMIERE SENIOR PLUS</h3>
-                        <p class='h5 text-red-500'> Ages 81-85 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 50,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 50,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 100.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                </div>
-                
-            </div>
-        </div>
-        
-    </section>
+    
             <section class="relative">
-          
+             
                 <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
                     <div class="py-20">
@@ -440,7 +266,7 @@
 <section class="bg-gray-200">
             <div class="flex justify-center items-start px-12">
               <div class="w-full ">
-                <h2 class="text-2xl font-semibold text-vnet-blue mt-6">FAQs MEMBERSHIP</h2>
+                <h2 class="text-2xl font-semibold text-vnet-blue mt-6">FAQs VOLUNTEER</h2>
                 <ul class="flex flex-col">
                   <li class="bg-white my-2 shadow-lg" x-data="accordion(1)">
                     <h2

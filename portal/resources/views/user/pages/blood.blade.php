@@ -15,266 +15,141 @@
 
 
     <div class="flex flex-col min-h-screen overflow-hidden">
-      <img
-      class="object-cover w-full h-50"
-      src="{{asset('admin/images/mbg.jpg')}}"
-      alt="apple watch photo"
-    />
+      
         <main class="grow">
-    
-
-          <section class="bg-cover bg-no-repeat py-12" style="background-image: url('user/home.png')">
-
-        <div class="w-full w-auto px-4 sm:px-6 pt-8 md:pt-8">
-         
-            <div class="w-3/4 mx-auto  pb-12 justify-center md:pb-20 " data-aos="fade-up">
-
-              <h1 class="md:text-4xl  xl:text-6xl text-4xl font-bold mb-4 text-red-600" data-aos="fade-up">
-                RED CROSS <span class="text-gray-300 ">   ORIENTAL MINDORO CHAPTER</span>
-              </h1>
-
-              <div class="text-gray-400 text-xl">
-
-              Joining the Philippine Red Cross Membership Program gives an
-          individual self-worth as you are extending help to the most vulnerable
-          Filipinos. <br /><br />
-          Philippine Red Cross Membership is a form of donation that has
-          accident assistance benefits intended for anyone between 5-85 years
-          old. As a member, an individual is entitled to accidental death,
-          disablement and dismemberment, hospitalization and burial
-          reimbursements. <br /><br />
-          Membership fund drive program gives you access to all services of
-          Philippine Red Cross in times of emergencies, sickness and disasters.
-          <br /><br />
-          To become a member, register now or just visit our nearest PRC Chapter
-          in your area.
-              </p>
-              <ul>
-                 <li class="mt-4">
-                  <a href="/signin" 
-                  class="rounded-xl bg-gradient-to-b from-yellow-300 to-yellow-500 px-8 py-2 text-xl text-slate-900 font-bold hover:shadow-2xl">JOIN NOW!</a>                </li>
-              </ul>
-            </div>
-        </div>
-      </section>
      
-      <section class="bg-gray-700 text-gray-200">
-        <div class="flex mb-4">
-            <div class="w-full bg-red-500 h-6"></div>
-        </div>
+    
+  
+          <div class="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
+          </div>
+  
+        <section class="bg-cover bg-no-repeat py-12 " style="background-image: url('user/static/BLOOD.jpg')">
 
-        <div class="w-full w-auto px-4 sm:px-6">
-            <div class="py-12 md:py-15 border-t border-gray-500">
+            <div class="w-full w-auto sm:px-6 pt-8 md:pt-8">
+  
+            
+              <div class="w-3/4 mx-auto  pb-12  md:pb-20 " data-aos="fade-up">
+                <h1 class="md:text-4xl xl:text-6xl text-4xl font-bold mb-4 text-white" data-aos="fade-up">
+                  SHARE LIFE,<span class="text-red-600 ">  GIVE BLOOD!</span>
+                </h1>
 
-            <h1 class="h1 text-gray-200 text-center  py-5">MEMBERSHIP CATEGORIES</h1>
-                {{-- {/* Items */} --}}
-                <div class=" text-gray-200 max-w-md mx-auto grid gap-2 md:grid-cols-3 lg:grid-cols-3 md:max-w-xl lg:max-w-full text-center px-10" data-aos-id-blocks>
-                    {{-- {/* 1nd item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                        <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                            <img  width="100" src="{{asset('user/categories/classic.png')}}" alt=""  />
+                <p class="text-lg text-gray-100 ">
+                  The National Blood Services is the Philippine Red Cross arm that delivers adequate, safe and quality blood supply to the most vulnerable. Through its 88 blood service facilities nationwide, the PRC has been the leading provider of blood and blood products in the country. The PRC continuously promotes voluntary non-remunerated blood donation to attain adequacy.
+                </p>
+                <ul>
+                  <li>
+                    <a href="/signin" class="btn text-white bg-red-500 hover:bg-red-800 mb-2 mt-4  rounded-xl bg-red-400 w-60 h-12">GIVE BLOOD!</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <div>
+                <h1 class="text-center md:text-4xl xl:text-6xl text-4xl font-bold mb-4 text-white" data-aos="fade-up">
+                  PROGRAMS
+                </h1>
 
-
-                        </div>
-                        <h3 class="h3 text-red-600">CLASSIC</h3>
-                        <p class='h5 text-red-500'> Ages 5-25 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 12,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 12,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 150.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                    {{-- {/* 2nd item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                      <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                        <img src="{{asset('user/categories/bronze.png')}}" alt="" width="200" />
-                    </div>
-
-                        <h3 class="h3 text-red-600">PREMIERE BRONZE</h3>
-                        <p class='h5 text-red-500'> Ages 5-65 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 35,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 35,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 150.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                    {{-- {/* 3rd item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                        <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                            <img src="{{asset('user/categories/silver.png')}}" alt=""  width="200" />
-                        </div>
-                        <h3 class="h3 text-red-600">PREMIERE SILVER</h3>
-                        <p class='h5 text-red-500'> Ages 5-65 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 100,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 100,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 10,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 200.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                    {{-- {/* 4th item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                        <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                          <img src="{{asset('user/categories/gold.png')}}" alt=""  width="200"  />
-                        </div>
-                        <h3 class="h3 text-red-600">PREMIERE GOLD</h3>
-                        <p class='h5 text-red-500'> Ages 5-65 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 200,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 200,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 10,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 200.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                    {{-- {/* 5th item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                        <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                          <img src="{{asset('user/categories/platinum.png')}}" alt=""  width="200"  />
-                        </div>
-                        <h3 class="h3 text-red-600">PREMIERE PLATINUM</h3>
-                        <p class='h5 text-red-500'> Ages 5-65 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 300,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 300,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 10,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 200.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                    {{-- {/* 6th item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                        <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                          <img src="{{asset('user/categories/senior.png')}}" alt=""   width="200"/>
-                        </div>
-                        <h3 class="h3 text-red-600">PREMIERE SENIOR</h3>
-                        <p class='h5 text-red-500'> Ages 66-80 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 50,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 50,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 100.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
-                    {{-- {/* 7th item */} --}}
-                    <div class="relative flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]" >
-                        <div class="block transition duration-300 ease-in-out hover:scale-125" aria-label="Cruip">
-                          <img src="{{asset('user/categories/plus.png')}}" alt=""   width="200"/>
-                        </div>
-                        <h3 class="h3 text-red-600">PREMIERE SENIOR PLUS</h3>
-                        <p class='h5 text-red-500'> Ages 81-85 years old <br />
-                            <strong>Php 150.00</strong></p>
-
-                        <p class='text-sm pt-5'>
-                            PHP 50,000.00<br />
-                            ACCIDENTAL DEATH, DISABLEMENT & DISMEMBERMENT
-                            <br /><br />
-                            PHP 50,000.00<br />
-                            UNPROVOKED MURDER & ASSAULT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL MEDICAL REIMBURSEMENT
-                            <br /><br />
-                            PHP 5,000.00<br />
-                            ACCIDENTAL BURIAL ASSISTANCE
-                            <br /><br />
-                            PHP 100.00<br />
-                            HOSPITAL DAILY ALLOWANCE PER DAY (MAX OF 60 DAYS)<br /><br />
-                        </p>
-                    </div>
-
+              </div>
+              <div class="grid md:grid-cols-2 md:gap-6 mx-12">
+                <div class="relative z-0 w-full mb-6 group">
+                  <p class="text-lg text-slate-200 ">
+                    <strong>Donor Recruitment and Retention</strong><br /> <span>
+                      To meet the increasing demand for blood and augment the national blood requirement,
+                      the PRC conducts education and recruitment sessions to encourage regular voluntary blood donations
+                      from communities, different companies, organizations, colleges and universities nationwide.
+                    </span>
+                  </p>
                 </div>
-                
+  
+                <div class="relative z-0 w-full mb-6 group">
+                  <p class="text-lg text-slate-200">
+                    <strong>Blood Collection</strong><br /> <span>With different PRC blood service facilities strategically located in the entire country, the PRC collects blood from voluntary, non-remunerated blood donors with their donations accounting to almost 50% share of the nation blood supply.
+                    </span></p>
+                </div>
+  
+                <div class="relative z-0 w-full mb-6 group">
+                  <p class="text-lg text-slate-200">
+                    <strong>Blood Component Processing</strong><br /> <span>Whole blood donations are separated into components using a special equipment to generate one unit each of red blood cells, plasma and platelets. Thus, one donation can help save three lives.
+                    </span></p>
+                </div>
+  
+                <div class="relative z-0 w-full mb-6 group">
+                  <p class="text-lg text-slate-200">
+                    <strong>Blood Storage and Issuance</strong><br /> <span>Once blood is suitable for transfusion, blood is stored in a temperature controlled blood bank refrigerator. Clients or patients needing blood for transfusion may request from any PRC blood facilities upon presentation of blood request form issued by the hospital or physician.
+                    </span></p>
+                </div>
+  
+              </div>
+  
             </div>
-        </div>
-        
-    </section>
+  
+          </section>
+
+          <section class="bg-gray-200">
+            <div class="flex justify-center items-start px-12">
+              <div class="w-full ">
+                <h2 class="md:text-6xl font-semibold text-vnet-blue mt-6 text-2xl">HOW TO DONATE</h2>
+                <ul class="flex flex-col">
+                  <li class="bg-white my-2 shadow-lg" x-data="accordion(1)">
+                    <h2
+                      @click="handleClick()"
+                      class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer"
+                    >
+                      <span>How often can a person donate?</span>
+                      <svg
+                        :class="handleRotate()"
+                        class="fill-current text-red-700 h-6 w-6 transform transition-transform duration-500"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
+                      </svg>
+                    </h2>
+                    <div
+                      x-ref="tab"
+                      :style="handleToggle()"
+                      class="border-l-2 border-red-600 overflow-hidden max-h-0 duration-500 transition-all"
+                    >
+                      <p class="p-3 text-gray-900">
+                        A healthy individual may donate every three months.  </p>
+                    </div>
+                  </li>
+                  <li class="bg-white my-2 shadow-lg" x-data="accordion(2)">
+                    <h2
+                      @click="handleClick()"
+                      class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer"
+                    >
+                      <span>Will donating blood make a person weak?</span>
+                      <svg
+                        :class="handleRotate()"
+                        class="fill-current text-red-700 h-6 w-6 transform transition-transform duration-500"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
+                      </svg>
+                    </h2>
+                    <div
+                      class="border-l-2 border-red-600 overflow-hidden max-h-0 duration-500 transition-all"
+                      x-ref="tab"
+                      :style="handleToggle()"
+                    >
+                      <p class="p-3 text-gray-900">
+                        No, it will not make you weak. Donating 450cc will not cause any ill effects or weakness. The human body has the capacity to compensate with the new fluid volume. Further, the bone marrow is stimulated to produce new blood cells which in turn makes the blood forming organs function more effectively.        </p>
+                    </div>
+                  </li>
+                 
+                </ul>
+              </div>
+            </div>
+          </section>
+     
+    
             <section class="relative">
-          
+             
                 <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
                     <div class="py-20">
                         {{-- {/* Page header */} --}}
                         <div class="max-w-full mx-auto text-center pb-4 md:pb-8">
-                            <h3 class="text-6xl font-bold text-blue-600">BE A MEMBER.</h3>
+                            <h3 class="text-6xl font-bold text-blue-600">REGISTRATION FORM</h3>
                         </div>
                         <form >
 
@@ -437,64 +312,7 @@
                     </div>
                 </div>
             </section>
-<section class="bg-gray-200">
-            <div class="flex justify-center items-start px-12">
-              <div class="w-full ">
-                <h2 class="text-2xl font-semibold text-vnet-blue mt-6">FAQs MEMBERSHIP</h2>
-                <ul class="flex flex-col">
-                  <li class="bg-white my-2 shadow-lg" x-data="accordion(1)">
-                    <h2
-                      @click="handleClick()"
-                      class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer"
-                    >
-                      <span>What is Red Cross Membership Program?</span>
-                      <svg
-                        :class="handleRotate()"
-                        class="fill-current text-red-700 h-6 w-6 transform transition-transform duration-500"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
-                      </svg>
-                    </h2>
-                    <div
-                      x-ref="tab"
-                      :style="handleToggle()"
-                      class="border-l-2 border-red-600 overflow-hidden max-h-0 duration-500 transition-all"
-                    >
-                      <p class="p-3 text-gray-900">
-                        Shipping time is set by our delivery partners, according to the delivery method chosen by you. Additional details can be found in the order confirmation
-                      </p>
-                    </div>
-                  </li>
-                  <li class="bg-white my-2 shadow-lg" x-data="accordion(2)">
-                    <h2
-                      @click="handleClick()"
-                      class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer"
-                    >
-                      <span>How do I track my order?</span>
-                      <svg
-                        :class="handleRotate()"
-                        class="fill-current text-red-700 h-6 w-6 transform transition-transform duration-500"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
-                      </svg>
-                    </h2>
-                    <div
-                      class="border-l-2 border-red-600 overflow-hidden max-h-0 duration-500 transition-all"
-                      x-ref="tab"
-                      :style="handleToggle()"
-                    >
-                      <p class="p-3 text-gray-900">
-                        Once shipped, you’ll get a confirmation email that includes a tracking number and additional information regarding tracking your order.
-                      </p>
-                    </div>
-                  </li>
-                 
-                </ul>
-              </div>
-            </div>
-          </section>
+
         <script>
           document.addEventListener('alpine:init', () => {
             Alpine.store('accordion', {

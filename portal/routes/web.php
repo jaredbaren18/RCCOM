@@ -124,7 +124,9 @@ Route::view('/','user.home');
 Route::view('/','user/home');
 Route::view('/home','user/userhome');
 
-Route::view('/profile','user/profile');
-Route::view('/membership','user.membership');
+Route::view('/profile','user.pages.profile');
+Route::view('/membership','user.pages.membership');
+Route::view('/volunteer','user.pages.volunteer');
+Route::view('/blood','user.pages.blood');
 
 

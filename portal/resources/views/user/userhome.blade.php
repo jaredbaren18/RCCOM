@@ -1,3 +1,6 @@
+@extends('user.layout.layout')
+@section('user-home')
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,8 +22,7 @@
   </head>
 
   <body>
-    @extends('user.layout.layout')
-    @section('user-home')
+
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -66,7 +68,6 @@
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
-
         <!-- Blog section -->
         <section class="container mx-auto mt-20 " id="news">
             <div class="mb-12 flex flex-col items-center">
@@ -133,11 +134,11 @@
             
                     <ul class="mt-8">
                         <li>
-                          <a href="/auth/signin" class="mt-4 rounded-xl bg-gradient-to-b from-yellow-300 to-yellow-500 px-8 py-2 text-xl text-slate-900 font-bold hover:shadow-2xl">JOIN NOW!</a>
+                          <a href="/auth/signin"
+                           class="mt-4 rounded-xl bg-gradient-to-b from-yellow-300 to-yellow-500 px-8 py-2 text-xl text-slate-900 font-bold hover:shadow-2xl">
+                           JOIN NOW!</a>
                         </li>
                       </ul>
-                      
-    
               </div>
             </div>
           </div>
@@ -164,9 +165,6 @@
                                 
                         </li>
                       </ul>
-                      
-                      
-    
               </div>
             </div>
           </div>
@@ -260,7 +258,10 @@
       
             </div>
           </section>
-                              <!-- Swiper JS -->
+
+
+    
+          <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
       var swiper = new Swiper('.mySwiper', {
@@ -280,19 +281,6 @@
         },
       });
     </script>
-          @endsection
-
-
-
-
-{{-- <section class="mt-4 py-16 bg-gray-500">
-    <div class="mx-8 grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-5">
-   
-      <div class="col-span-1 sm:col-span-2 md:col-span-3 h-4" style="background-image: url('user/home.png')">
- 
-
-      </div>
-
-      <div class="col-span-1 sm:col-span-1 md:col-span-2 h-4 bg-teal-400"></div>
-    </div>
-  </section> --}}
+  </body>
+</html>
+@endsection

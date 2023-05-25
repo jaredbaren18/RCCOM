@@ -22,7 +22,8 @@
     />
         <main class="grow">
     
-
+  
+  
           <section class="bg-cover bg-no-repeat py-12" style="background-image: url('user/home.png')">
 
         <div class="w-full w-auto px-4 sm:px-6 pt-8 md:pt-8">
