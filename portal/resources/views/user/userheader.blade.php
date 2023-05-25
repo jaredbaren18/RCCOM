@@ -11,12 +11,9 @@
 
   <body>
     <header class="sticky top-0 bg-white border-b border-slate-200 z-30 " x-data="{ isOpen: false }">
-
       <nav class="container mx-auto px-8 py-4 md:flex md:items-center md:justify-between">
         <div class="flex items-center justify-between">
-      
             <img href="/" class="h-10 md:h-12" src="{{asset('user/adminlogo.png')}}" alt=""/>
-        
           <!-- Mobile menu button -->
           <div @click="isOpen = !isOpen" class="flex md:hidden">
             <button type="button" class="text-gray-800 hover:text-gray-400 focus:text-gray-400 focus:outline-none" aria-label="toggle menu">
@@ -26,23 +23,18 @@
             </button>
           </div>
         </div>
-
         <div :class="isOpen ? 'flex' : 'hidden'" class="mt-2 flex-col space-y-4 md:mt-0 md:flex md:flex-row md:items-center md:space-y-0 md:space-x-10">
           <a class="transform font-bold text-gray-800 hover:text-red-700" href="/">Home</a>
           <a x-data="{ open: true }" class="transform  font-bold text-gray-800 hover:text-red-700 md:hidden" href="/#services">Services</a>
-   
-
-
     <!-- Dropdown menu for desktop view -->
     <div x-data="{ open: false }" @mouseleave="open = false" class="relative hidden md:block">
         <!-- Dropdown toggle button -->
         <a
-          @mouseover="open = true" 
+          @mouseover="open = true"  
           class="transform font-bold text-gray-800 hover:text-red-700" href="/#services"
         >
           Services
         </a>
-
         <!-- Dropdown menu -->
         <div
           x-show="open"
@@ -75,15 +67,43 @@
           </a>
         </div>
       </div>
-
-
           <a class="transform font-bold text-gray-800 hover:text-red-700" href="/#news">News</a>
           <a class="transform font-bold text-gray-800 hover:text-red-700" href="/#contact">Contact</a>
           <a class="transform font-bold text-gray-800 hover:text-red-700" href="/#about">About</a>
-          <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="/auth/signup">ACCOUNT</a>
+         <button onclick="toggleMenu()" class="px-10 py-3 bg-blue-600 hover:bg-amber-600 focus:bg-rose-500 text-white">ACCOUNT</button>
+      
         </div>
       </nav>
+      <div id="menu" class="hidden flex flex-col bg-white drop-shadow-md text-center">
+        <a class="px-5 py-3 hover:bg-amber-300 border-b border-gray-200" href="#">Profile</a>
+        <a class="px-5 py-3 font-bold hover:bg-amber-300 border-b border-red-200" href="#">LOG OUT</a>
+  
+    </div>
+  
     </header>
+   
+
+    <!-- Javascript code -->
+    <script>
+      var menu = document.getElementById("menu");
+
+      // open/close the menu when the user clicks on the button
+      function toggleMenu() {
+          if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');}   
+         else {
+              menu.classList.add('hidden');
+          }
+      }
+
+      // close the menu when the user clicks outside of it 
+      window.onclick = function (event) {
+          var dropdownWrapper = document.getElementById('dropdown-wrapper');
+          if (!dropdownWrapper.contains(event.target) && !menu.classList.contains('hidden')) {
+              menu.classList.add('hidden');
+          }
+      }
+  </script>
  
   </body>
 </html>
