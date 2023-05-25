@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{asset('admin/plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{asset('user/css/user.css')}}">
+  
+</head>
+<body>
+  
 <div id="chat-form" class="fixed-bottom d-flex justify-content-end m-2 d-none">
   <div class="">  
     <div class="card" style="width:400px;height:500px">
@@ -109,3 +122,6 @@ setInterval(() => {
         });
     }
   </script>
+</body>
+</html>
+

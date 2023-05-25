@@ -1,4 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </head>
+
+  <body>
     <header class="sticky top-0 bg-white border-b border-slate-200 z-30 " x-data="{ isOpen: false }">
 
       <nav class="container mx-auto px-8 py-4 md:flex md:items-center md:justify-between">
@@ -70,18 +81,39 @@
           <a class="transform font-bold text-gray-800 hover:text-red-700" href="/#contact">Contact</a>
           <a class="transform font-bold text-gray-800 hover:text-red-700" href="/#about">About</a>
 
-
-          @if(!session('User'))
-          <a class="rounded-2xl font-bold border bg-gradient-to-b from-yellow-300 to-yellow-500 px-4 py-2 text-center text-white hover:shadow-xl" href="#">Sign Up</a>
-          @else
-          <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="/auth/signup">ACCOUNT</a>
-          @endif
-          <a href="{{url('auth/logout')}}">Logout</a>
+          <button onclick="toggleMenu()" class="px-4 py-3 bg-blue-600 hover:bg-amber-600 focus:bg-rose-500 text-white">ACCOUNT</button>
   
         </div>
       </nav>
+
+      <div id="menu" class="hidden flex flex-col bg-white drop-shadow-md text-center">
+        <a class="px-5 py-3 hover:bg-amber-300 border-b border-gray-200" href="#">Profile</a>
+        <a href="{{url('auth/logout')}}" class="px-5 py-3 font-bold hover:bg-amber-300 border-b border-red-200">LOG OUT</a>
+  
+    </div>
     </header>
  
+    <!-- Javascript code -->
+    <script>
+      var menu = document.getElementById("menu");
+
+      // open/close the menu when the user clicks on the button
+      function toggleMenu() {
+          if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');}   
+         else {
+              menu.classList.add('hidden');
+          }
+      }
+
+      // close the menu when the user clicks outside of it 
+      window.onclick = function (event) {
+          var dropdownWrapper = document.getElementById('dropdown-wrapper');
+          if (!dropdownWrapper.contains(event.target) && !menu.classList.contains('hidden')) {
+              menu.classList.add('hidden');
+          }
+      }
+  </script>
   </body>
 </html>
 

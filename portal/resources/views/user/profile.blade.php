@@ -19,7 +19,7 @@
   </head>
 
   <body class="bg-indigo-200">
-    @include('user.userheader')
+    @include('user.layout.header')
 
   <section class="py-8">
     {{-- <section class="py-8 bg-cover bg-no-repeat " style="background-image: url('user/bg.jpg')"> --}}
@@ -74,7 +74,7 @@
       <div class="mx-8 grid grid-cols-1 gap-2 md:grid-cols-2">
         <div class="bg-gray-100">
           <header class="bg-gray-200 text-gray-700 font-semibold text-xs p-4">MEMBERSHIP TRANSACTION</header>
-          <div class="m-4 pt-3 grid grid-cols-1 gap-2 md:grid-cols-2 text-md font-medium">
+          <div class="m-4  grid grid-cols-1 gap-2 md:grid-cols-2 text-md font-medium">
             <div class="text-gray-600">
               <h1>Account ID: <span class="text-slate-900 pl-2">USR1</span></h1>
               <h1>MEMBERSHIP ID: <span class="text-slate-900 pl-2">SLVR1</span></h1>
@@ -126,7 +126,7 @@
 
       <div class="bg-gray-100">
         <header class="bg-gray-200 text-gray-700 font-semibold text-xs p-4">BLOOD TRANSACTION</header>
-        <div class="m-4 pt-3 grid grid-cols-1 gap-2 md:grid-cols-2 text-md font-medium">
+        <div class="m-4 pt-2 grid grid-cols-1 gap-2 md:grid-cols-2 text-md font-medium">
           <div class="text-gray-600">
             <h1>BLOOD TYPE: <span class="text-slate-900 pl-2">A+</span></h1>
             <h1>DONATION COUNT: <span class="text-slate-900 pl-2">1</span></h1>

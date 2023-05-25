@@ -29,56 +29,7 @@
 
         <div :class="isOpen ? 'flex' : 'hidden'" class="mt-2 flex-col space-y-4 md:mt-0 md:flex md:flex-row md:items-center md:space-y-0 md:space-x-10">
           <a class="transform font-bold text-gray-800 hover:text-red-700" href="/">Home</a>
-          <a x-data="{ open: true }" class="transform  font-bold text-gray-800 hover:text-red-700 md:hidden" href="/#services">Services</a>
-   
-
-
-    <!-- Dropdown menu for desktop view -->
-    <div x-data="{ open: false }" @mouseleave="open = false" class="relative hidden md:block">
-        <!-- Dropdown toggle button -->
-        <a
-          @mouseover="open = true" 
-          class="transform font-bold text-gray-800 hover:text-red-700" href="/#services"
-        >
-          Services
-        </a>
-
-        <!-- Dropdown menu -->
-        <div
-          x-show="open"
-          class="absolute  w-48 py-2 bg-gray-100 rounded-md shadow-xl
-          ">
-        
-          <a
-            href="#"
-            class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white"
-          >
-            Blood Program
-          </a>
-          <a
-            href="#"
-            class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white"
-          >
-            Volunteer
-          </a>
-          <a
-            href="#"
-            class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white"
-          >
-           Trainings and Seminars
-          </a>
-          <a
-            href="#"
-            class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white"
-          >
-            Appointments
-          </a>
-        </div>
-      </div>
-
-
-          <a class="transform font-bold text-gray-800 hover:text-red-700" href="/#news">News</a>
-          <a class="transform font-bold text-gray-800 hover:text-red-700" href="/#contact">Contact</a>
+          <a class="transform font-bold text-gray-800 hover:text-red-700" href="/#services">Services</a>
           <a class="transform font-bold text-gray-800 hover:text-red-700" href="/#about">About</a>
           <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="/auth/signup">Sign Up</a>
         </div>
