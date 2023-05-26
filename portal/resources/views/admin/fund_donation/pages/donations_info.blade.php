@@ -8,20 +8,21 @@
   <!-- Main content -->
   <section class="content">
     <div class="container">
-      @if(session('success'))
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>{{session('success')}}</strong> 
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <div class="mx-auto mt-5 pt-3" style="width:550px ">
+        @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show text-center" role="alert" style="width:550px">
+          <strong>{{session('success')}}</strong> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        
+        @elseif(session('failed'))
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert" style="width:550px">
+          <strong>{{session('failed')}}</strong> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        
+        @endif
       </div>
-      
-      @elseif(session('failed'))
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>{{session('failed')}}</strong> 
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      
-      @endif
-     
       <!-- Small boxes (Stat box) -->
       <div class="card">
         <div class="card-header">

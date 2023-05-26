@@ -1,17 +1,25 @@
-<div id="chat-form" class="fixed-bottom d-flex justify-content-end m-2 d-none">
-  <div class="">  
-    <div class="card" style="width:400px;height:500px">
-    <div class="card-header">
-    <div class="row">
-      <div class="col-md-11">
-        <h4><strong>Customer Service Staff</strong></h4>
+
+
+<div id="chat-form" class="fixed-bottom d-flex justify-content-end m-3 d-none">
+    <div class="card px-3" style="width:400px;height:500px">
+      <div class="row border-bottom border-1">
+        <div class="col-md-11">
+          <h4><strong>Red Cross Calapan Team</strong></h4>
+        </div>
+        <div class="col-md-1 d-flex justify-content-end">
+         <button id="close-chat-btn"><h4><i class=" fas fa-angle-down"></i></h4></button>
+        </div>
       </div>
-      <div class="col-md-1 d-flex justify-content-end">
-       <button id="close-chat-btn"><h4><i class=" fas fa-angle-down"></i></h4></button>
+      <div class="row overflow-auto h-100 rounded">
+        <div class="col-md-12">
+          <div class="card px-2 h-100">
+            <div id="coversation">
+              <div class="sender py-3"></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
-    </div>
+      
     <div class="row px-2 py-2 mt-2">
       <div class="col-md-12">
         <form class="input-group" id="rtc-form" action="{{url('send-chat')}}" method="post">
@@ -23,6 +31,10 @@
     </form>
 </div>
     </div>
+
+
+ 
+
     
   </div>
   <div class="d-flex justify-content-end fixed-bottom m-2">
@@ -69,11 +81,9 @@
                 }
             });
         });
-setInterval(() => {
-  reloadChat();
-}, 5000);
-
-
+        setInterval(() => {
+          reloadChat();
+        }, 5000);
     });
     function reloadChat()
     {
@@ -83,31 +93,30 @@ setInterval(() => {
             dataType: 'json',
             success: function(response) {
                 // Handle success response and populate the table
-                $('#coversation tbody').empty();
-                var tableBody = $('#coversation tbody');
+                $('.sender').empty();
+                var table = $('#coversation');
                 
                 $.each(response, function(index, data) {
-                  var tr = $('<tr>');
-                      var td=$('<td>');
-                        var p=$('<p>');
-                          var icon=$('<i>');
+
+                  var sender=$('.sender');
+                  var mess=$('<p>');
              if(data.sendby=="Admin"||data.sendby=="Staff")
              
              {
-              td.text(" "+data.message);
-              td.addClass('text-left p-3');
-              tr.append(td);
-
+              mess.text(data.message);
+              mess.addClass('bg-primary text-left px-4 py-2 mx-3 rounded text-white');
+              sender.addClass('w-100 text-left');
+              sender.append(mess);
                    
              }
              else
              {
-              td.text(data.message);
-              td.addClass('text-right');
-              tr.append(td);
+              mess.text(data.message);
+              mess.addClass('bg-success text-right  px-4 py-2  mx-3  rounded text-white');
+              sender.addClass('w-100 text-right');
+              sender.append(mess);         
              }
-          
-             tableBody.append(tr);
+          table.append(sender);
                 });
             },
             error: function(xhr) {

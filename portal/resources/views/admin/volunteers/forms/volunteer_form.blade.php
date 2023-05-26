@@ -9,7 +9,7 @@
   <!-- Main content -->
   <section class="content mt-2">
     <div class="container-fluid">
-      <div class="mx-auto" style="width:550px ">
+      <div class="mx-auto mt-5 pt-3" style="width:550px ">
         @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show text-center" role="alert" style="width:550px">
           <strong>{{session('success')}}</strong> 

@@ -16,7 +16,7 @@ class Admin_Volunteer_Controller extends Controller
     {
         session()->forget('Volunteer');
         $data['Volunteers_Count']=DB::table('table_volunteers')->where('vol_status','Activated')->count();
-        $data['Pendings_Count']=DB::table('table_volunteers')->where('vol_status','Activated')->count();
+        $data['Pendings_Count']=DB::table('table_volunteers')->where('vol_status','Pending')->count();
         $data['Pending']=DB::table('table_volunteers')->where('vol_status','Pending')->get();
         $data['Activated']=DB::table('table_volunteers')->where('vol_status','Activated')->get();
         return view('admin.volunteer',$data);

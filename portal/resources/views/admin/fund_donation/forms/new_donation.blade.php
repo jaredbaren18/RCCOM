@@ -8,19 +8,21 @@
 
     <div class="content ">
       <div class="containter-fluid p-3">
-        @if(session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>{{session('success')}}</strong> 
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div class="mx-auto mt-5 pt-3" style="width:550px ">
+          @if(session('success'))
+          <div class="alert alert-success alert-dismissible fade show text-center" role="alert" style="width:550px">
+            <strong>{{session('success')}}</strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          
+          @elseif(session('failed'))
+          <div class="alert alert-danger alert-dismissible fade show text-center" role="alert" style="width:550px">
+            <strong>{{session('failed')}}</strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          
+          @endif
         </div>
-        
-        @elseif(session('failed'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          <strong>{{session('failed')}}</strong> 
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        
-        @endif
         <div class="card p-3">
           <div class="card-header">
             <h4>Donors information</h4>

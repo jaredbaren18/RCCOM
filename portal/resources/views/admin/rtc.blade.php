@@ -36,31 +36,31 @@
             <div class="card-body ">
               <table id="users-chats">
               </table>
-         <div id=table-messages class="col-md-12 ">
-          @foreach ($Messages as $chats)
-          @if($chats->status=="Unseen")
-          <div class="col-md-12 p-3 rounded">
-            <div class="d-flex">
-              <td>
-                <h3><i class="fas fa-user-circle px-3"></i></h3>
-                <button type="button" class="convo bg-light  btn-btn-light border border-light" data-data-id="{{ $chats->uid }}"><strong>{{$chats->con_fname}} {{$chats->con_lname}}</strong></button>
-              </td>
-            </div>
-              <sub class="pl-5 overflow-hidden">{{$chats->message}}</sub>
-             </div>
-          @else
-          <div class="col-md-12 bg-light p-3 rounded">
-            <div class="d-flex">
-              <td>
-                <h3><i class="fas fa-user-circle px-3"></i></h3>
-                <button type="button" class="convo bg-light  btn-btn-light border border-light" data-data-id="{{ $chats->uid }}">{{$chats->con_fname}} {{$chats->con_lname}}</button>
-              </td>
-            </div>
-              <sub class="pl-5 overflow-hidden">{{$chats->message}}</sub>
-             </div>
-          @endif
-       @endforeach
-         </div>
+                <div id=table-messages class="col-md-12 ">
+                  @foreach ($Messages as $chats)
+                  @if($chats->status=="Unseen")
+                  <div class="col-md-12 p-3 rounded">
+                    <div class="d-flex">
+                      <td>
+                        <h3><i class="fas fa-user-circle px-3"></i></h3>
+                        <button type="button" class="convo bg-light  btn-btn-light border border-light" data-data-id="{{ $chats->uid }}"><strong>{{$chats->con_fname}} {{$chats->con_lname}}</strong></button>
+                      </td>
+                    </div>
+                      <sub class="pl-5 ">{{$chats->message}}</sub>
+                    </div>
+                  @else
+                  <div class="col-md-12 bg-light p-3 rounded">
+                    <div class="d-flex">
+                      <td>
+                        <h3><i class="fas fa-user-circle px-3"></i></h3>
+                        <button type="button" class="convo bg-light  btn-btn-light border border-light" data-data-id="{{ $chats->uid }}">{{$chats->con_fname}} {{$chats->con_lname}}</button>
+                      </td>
+                    </div>
+                      <sub class="pl-5 ">{{$chats->message}}</sub>
+                    </div>
+                  @endif
+              @endforeach
+                </div>
             </div>
         
           </div>
@@ -70,17 +70,20 @@
 
      
             <div class="row mt-3">
-          <div class="card">
+          <div class="card overflow-auto" style="height: 80vh">
             <div class="row ">
               <div class="col-md-12 mt-2">
                 <button id="close-chat-btn" class="btn btn-light"><i class="fas fa-reply"></i></button>
               </div>
             </div>      
-            <div class="card p-3 mt-3">
+            <div class="card p-3 mt-3" =style="height: 80vh">
               <table id="user-conversation" >
-                <tbody class="px-5 overflow-scroll"></tbody>
+                <tbody class="px-5 "></tbody>
               </table>
             </div>
+         
+          </div>
+          <div class="card-footer">
             <form class="input-group" id="rtc-form" method="post">
               @csrf
               <input id="u_id" type="hidden" name="u_id" class="form-control">
@@ -162,7 +165,7 @@
           });
           setInterval(() => {
             userChats();
-          }, 10000);
+          }, 3000);
           userChats();
       });
       function userChats()
