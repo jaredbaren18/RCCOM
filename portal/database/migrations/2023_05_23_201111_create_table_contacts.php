@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('table_contacts', function (Blueprint $table) {
             $table->id('con_id');
             $table->unsignedBigInteger('uid');
-            $table->string('con_fname');
-            $table->string('con_lname');
             $table->string('message');
             $table->string('status');
             $table->timestamps();
