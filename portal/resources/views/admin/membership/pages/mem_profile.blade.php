@@ -81,8 +81,8 @@
             </div>
             <div class="card-footer d-flex justify-content-end ">
               @if($mem_profile->mem_status=="Activated")
-              <a href="{{url('admin/membership/profile/delete',['mem_id'=>$mem_profile->mem_id])}}" onclick="confirmAction()" class="btn btn-danger my-2">Delete</a>
-              <a href="{{url('admin/membership/profile/edit',['mem_id'=>$mem_profile->mem_id])}}" class="btn btn-primary my-2 mx-2">Edit</a>
+              {{-- <a href="{{url('admin/membership/profile/delete',['mem_id'=>$mem_profile->mem_id])}}" onclick="confirmAction()" class="btn btn-danger my-2">Delete</a> --}}
+              <a href="{{url('admin/membership/profile/edit',['mem_id'=>$mem_profile->mem_id])}}" class="btn btn-warning my-2 mx-2">Edit</a>
               <a href="{{url('admin/membership/activated')}}" class="btn btn-primary my-2">Back</a>
               @elseif($mem_profile->mem_status=="Pending")
                @csrf
@@ -93,8 +93,8 @@
               @elseif($mem_profile->mem_status=="Expired")
               <div class="">
               <a href="{{url('admin/membership/profile/edit',['mem_id'=>$mem_profile->mem_id])}}" class="btn btn-warning m-2">Renew</a>
-              <a href="{{url('admin/membership/profile/delete',['mem_id'=>$mem_profile->mem_id])}}" class="btn btn-danger m-2" onclick="confirmAction()">Delete</a>
-              <a href="{{url('admin/membership/expired')}}" class="btn btn-primary">Back</a></div>
+              {{-- <a href="{{url('admin/membership/profile/delete',['mem_id'=>$mem_profile->mem_id])}}" class="btn btn-danger m-2" onclick="confirmAction()">Delete</a>
+              <a href="{{url('admin/membership/expired')}}" class="btn btn-primary">Back</a></div> --}}
             
             </div>
             @elseif($mem_profile->mem_status=="Decline")

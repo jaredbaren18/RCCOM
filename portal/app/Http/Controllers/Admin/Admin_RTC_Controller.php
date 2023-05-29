@@ -15,18 +15,19 @@ class Admin_RTC_Controller extends Controller
     public function RTC(Request $request)
     {
         session()->forget('Chat');
-        $data['Messages']=DB::table('table_contacts')->orderBy('updated_at','desc')->get();
+        $data['Messages']=DB::table('table_contacts')->orderBy('created_at','desc')->get();
         return view('admin.rtc',$data);
     }
     public function User_Chat_Messages()
     {
         $data=DB::table('table_contacts')->orderBy('updated_at','desc')->get();
         return response()->json($data);
-
-    }
-    public function User_Profile()
-    {
         
+    }
+    public function User_Profile($uid)
+    {
+        $data=DB::table('table_contacts')->where('uid',$uid)->first();
+        return response()->json($data);
     }
     public function Messages()
     {

@@ -39,6 +39,12 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
    
     // DASHBOARD 
     Route::get('dashboard',[Admin_Dashboard_Controller::class,'Dashboard']);
+    Route::get('dashboard/membership-ts',[Admin_Dashboard_Controller::class,'Membership_Sales']);
+    Route::get('dashboard/membership-aa',[Admin_Dashboard_Controller::class,'Membership_Activated_Count']);
+    Route::get('dashboard/membership-pa',[Admin_Dashboard_Controller::class,'Membership_Pending_Count']);
+    Route::get('dashboard/membership-ctd',[Admin_Dashboard_Controller::class,'Charity_Total_Donations']);
+    Route::get('dashboard/membership-acd',[Admin_Dashboard_Controller::class,'Active_Charity_Donators']);
+    Route::get('dashboard/membership-hcd',[Admin_Dashboard_Controller::class,'Highest_Charity_Donations']);
     Route::get('active-acounts',[Admin_Membership_Controller::class,'Memership_Bar_Chart']);
 
 
@@ -51,17 +57,26 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     Route::post('membership/profile/update',[Admin_Membership_Controller::class,'Update_Membership_Account']);
     Route::post('membership/profile/renew',[Admin_Membership_Controller::class,'Renew_Membership_Account']);
     Route::post('membership/profile/decline',[Admin_Membership_Controller::class,'Decline_Membership_Account']);
-    Route::post('membership/profile/approve',[Admin_Membership_Controller::class,'Approve_Membership_Account']);
+    Route::get('membership/profile/approve/{mem_id}',[Admin_Membership_Controller::class,'Approve_Membership_Account']);
+    Route::get('membership/all',[Admin_Membership_Controller::class,'All']);
+    Route::get('membership/activated',[Admin_Membership_Controller::class,'Activated']);
+    Route::get('membership/pending',[Admin_Membership_Controller::class,'Pending']);
+    Route::get('membership/expired',[Admin_Membership_Controller::class,'Expired']);
+    Route::get('membership/declined',[Admin_Membership_Controller::class,'Declined']);
+
+    Route::get('membership/sales',[Admin_Membership_Controller::class,'Sales']);
+    Route::get('membership/active-accounts',[Admin_Membership_Controller::class,'Active_Accounts']);
+    Route::get('membership/pending-accounts',[Admin_Membership_Controller::class,'Pending_Accounts']);
+    Route::get('membership/expired-accounts',[Admin_Membership_Controller::class,'Expired_Accounts']);
+    Route::get('membership/declined-accounts',[Admin_Membership_Controller::class,'Declined_Accounts']);
+
+
 
 
 
     
 
 
-    Route::get('membership/activated',[Admin_Membership_Controller::class,'Activated']);
-    Route::get('membership/expired',[Admin_Membership_Controller::class,'Expired']);
-    Route::get('membership/pending',[Admin_Membership_Controller::class,'Pending']);
-    Route::get('membership/declined',[Admin_Membership_Controller::class,'Decline']);
     Route::view('membership/create-new','admin.membership.forms.new_membership');
     Route::post('membership/deleting',[Admin_Membership_Controller::class,'Deleting_Membership']);
     Route::post('membership/create-membership',[Admin_Membership_Controller::class,'Submit_Membership']);
