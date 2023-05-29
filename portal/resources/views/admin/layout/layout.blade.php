@@ -123,7 +123,11 @@
 
 
 <script>
-$('#membership-table').dataTable();
+$('#membership-all').dataTable();
+$('#membership-activated').dataTable();
+$('#membership-expired').dataTable();
+$('#membership-pending').dataTable();
+$('#membership-declined').dataTable();
 $('#donation-table').dataTable();
 $('#pending-donation-table').dataTable();
 $('#appointment-table').dataTable();

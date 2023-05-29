@@ -238,19 +238,8 @@
         <div class="row">
           <div class="col-md-12 mt-4 d-flex justify-content-end">
            <button type="submit" class="btn btn-success mx-2" onclick="confirmCreate()">Confirm</button>
-           <a href="{{url('admin/membership/activated')}}" class="btn btn-danger">Cancel</a>
+           <a href="{{url('admin/membership')}}" class="btn btn-danger">Back</a>
            </form>
-
-
-
-
-
-
-
-
-
-
-
 
            {{-- UPDATE FORM  --}}
               @elseif(session('mem_profile')->mem_status=="Activated")
@@ -456,8 +445,7 @@
          <div class="row">
            <div class="col-md-12 mt-4 d-flex justify-content-end">
             <button type="submit" class="btn btn-success mx-2" onclick="confirmUpdate()">Update</button>
-            <a href="{{url('admin/membership/profile',['mem_id'=>session('mem_profile')->mem_id])}}" class="btn btn-danger mx-2">Cancel</a>
-            <a href="{{url('admin/membership/profile',['mem_id'=>session('mem_profile')->mem_id])}}" class="btn btn-primary">Back</a>
+            <button id="backbtn" class="btn btn-primary">Back</button>
 
             </form>
 
@@ -750,6 +738,10 @@
   $(document).ready(function () {
     $('#membership').addClass('active');
     $('#create-new').addClass('active');
+    $('#backbtn').click(function (e) { 
+      e.preventDefault();
+      window.location.href="{{url('admin/membership')}}";
+    });
   });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
